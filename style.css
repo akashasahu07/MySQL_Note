@@ -54,8 +54,7 @@ code {
     bottom: 30px;
     right: 20px;
     background-color: #007bff;
-    padding: 10px 15px;
-    font-size: 1rem;
+    padding: 7px 13px;
     font-weight: bold;
     border-radius: 40%;
     box-shadow: 1px 1px 10px #ff00a6;
@@ -69,4 +68,13 @@ code {
 
 .backToTop:hover {
     background-color: #0056b3;
+}
+
+table, tr, td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0 20px;
 }

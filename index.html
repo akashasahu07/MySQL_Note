@@ -362,12 +362,13 @@
                     <p><b>Q: </b>WAQ to print second highest salary employee details?</p>
                     <span>Ans: </span><code>select * from employees order by salary desc limit 1 offset 1;</code>
 
-                    <li><b>Group by: </b>Group by is used to group the records based on common field/column values.It is used for collective responses by using aggregate functions.</li>
+                    <li><b>Group by: </b>Group by is used to group the records based on common field/column values.It is
+                        used for collective responses by using aggregate functions.</li>
 
                     <p><b>Q: </b>WAQ to count number of employee based on their country?</p>
                     <span>Ans: </span><code>select country, count(country) from employees group by country;</code>
                 </ul>
-                
+
                 <li><b>Aggregate Function: </b>Aggregate functions are used mainly for collective data analysis.</li>
                 <ul>
                     <li><b>Count(): </b>Count is used to count total number of records available in that group.</li>
@@ -376,6 +377,41 @@
 
                     <li><b>Sum(): </b>Sum is used to add all the values available for a perticular group.</li>
                     <p><b>Q: </b>WAQ to print total marks achieved by students based on their gender?</p>
+                    <span>Ans: </span><code>select gender, sum(smark) from students group by gender;</code>
+
+                    <li><b>Avg(): </b>Avg is used to print average of a column from a perticular group.</li>
+                    <p><b>Q: </b>WAQ to print average marks of students based on their gender?</p>
+                    <span>Ans: </span><code>select gender, avg(smark) from students group by gender;</code>
+
+                    <li><b>Max(): </b>Max is used to print maximum of a column from a perticular group.</li>
+
+                    <p><b>Q: </b>WAQ to print maximum marks of students based on gender?</p>
+                    <span>Ans: </span><code>select gender, max(smark) from students group by gender;</code>
+
+                    <li><b>Min(): </b>Min is used to print minimum value of a column from a perticular group.</li>
+                    <p><b>Q: </b>WAQ to print minimum mark of students based on their gender?</p>
+                    <span>Ans: </span><code>select gender, min(smark) from students group by gender;</code>
+
+                    <li><b>Distinct: </b>Distinct is used to get different records of data without duplication.</li>
+                    <p><b>Q: </b>WAQ to print total number of genders we have in students table.</p>
+                    <span>Ans: </span><code>select count(distinct gender) from students;</code>
+
+                    <li><b>Group_Concat(): </b>String_Concat can be used to print different values existed in each group.</li>
+                    <p><b>Q: </b>WAQ to print names of employees from diffrent countries along with total country count?</p>
+                    <span>Ans: </span><code>select country, count(country), group_concat(country) from employees group by country;</code>
+                    <p>It will print like This</p>
+                    <table>
+                        <tr>
+                            <td>India</td>
+                            <td>4</td>
+                            <td>India, India, India, India</td>
+                        </tr>
+                        <tr>
+                            <td>United States</td>
+                            <td>1</td>
+                            <td>United States</td>
+                        </tr>
+                    </table>
                 </ul>
             </ul>
         </div>
