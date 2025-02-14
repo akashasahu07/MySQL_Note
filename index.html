@@ -396,9 +396,12 @@
                     <p><b>Q: </b>WAQ to print total number of genders we have in students table.</p>
                     <span>Ans: </span><code>select count(distinct gender) from students;</code>
 
-                    <li><b>Group_Concat(): </b>String_Concat can be used to print different values existed in each group.</li>
-                    <p><b>Q: </b>WAQ to print names of employees from diffrent countries along with total country count?</p>
-                    <span>Ans: </span><code>select country, count(country), group_concat(country) from employees group by country;</code>
+                    <li><b>Group_Concat(): </b>String_Concat can be used to print different values existed in each
+                        group.</li>
+                    <p><b>Q: </b>WAQ to print names of employees from diffrent countries along with total country count?
+                    </p>
+                    <span>Ans:
+                    </span><code>select country, count(country), group_concat(country) from employees group by country;</code>
                     <p>It will print like This</p>
                     <table>
                         <tr>
@@ -412,6 +415,43 @@
                             <td>United States</td>
                         </tr>
                     </table>
+                </ul>
+            </ul>
+            <h3>Joins:</h3>
+            <ul>
+                <li>Joins are used to combine two or more number of tables and retrive the data based on common field
+                    connection.</li>
+                <li>If you want to join two table the first table you can create like this. It must have foreign key and
+                    references.</li>
+                <span>Example:
+                </span><code>create table Orders(order_id int primary key, item varchar(20) not null, amount int not null, customer_id int not null, foreign key(customer_id) references  Customers(customer_id) );</code>
+                <li>There are different joins existed in MySQL.</li>
+                <ul>
+                    <li><b>Inner Join: </b>Inner Join is used to retrive the data which is common on both the tables. Both table common data will come.
+                    </li>
+                    <span>Syntax:
+                    </span><code>select t1.field1, t2.field2,... from table1 as t1 inner join table2 as t2 on t1.common-field = t2.common-field;</code>
+                    <p><b>Q: </b>WAQ to retrive first_name, item they bought?</p>
+                    <span>Ans: </span><code>select t1.first_name, t2.item
+                        from Customers as t1
+                        inner join
+                        orders as t2 on
+                        t1.customer_id = t2.customer_id</code>
+
+                    <p><b>Q: </b>WAQ to print customers name with total amount they spent?</p>
+                    <span>Ans: </span><code>select t1.first_name, sum(t2.amount) 
+                        from customers as t1
+                        inner join
+                        orders as t2 on 
+                        t1.customer_id = t2.customer_id
+                        group by t1.first_name;</code>
+
+                    <li><b>Left Join: </b>Left Join is used to retrive the data which is available in laft table and
+                        common data. All the people from left will come and only common from right table come. </li>
+                    <span>Syntax:
+                    </span><code>select t1.field1, t2.field2,... from table1 as t1 left join table2 as t2 on t1.common-field = t2.common-field;</code>
+                    <li><b>Right Join: </b>Right Join is used to retrive the data which is available in left table and
+                        common data. All the people from right will come and only common from left table come.</li>
                 </ul>
             </ul>
         </div>
