@@ -427,7 +427,8 @@
                 </span><code>create table Orders(order_id int primary key, item varchar(20) not null, amount int not null, customer_id int not null, foreign key(customer_id) references  Customers(customer_id) );</code>
                 <li>There are different joins existed in MySQL.</li>
                 <ul>
-                    <li><b>Inner Join: </b>Inner Join is used to retrive the data which is common on both the tables. Both table common data will come.
+                    <li><b>Inner Join: </b>Inner Join is used to retrive the data which is common on both the tables.
+                        Both table common data will come.
                     </li>
                     <span>Syntax:
                     </span><code>select t1.field1, t2.field2,... from table1 as t1 inner join table2 as t2 on t1.common-field = t2.common-field;</code>
@@ -450,9 +451,32 @@
                         common data. All the people from left will come and only common from right table come. </li>
                     <span>Syntax:
                     </span><code>select t1.field1, t2.field2,... from table1 as t1 left join table2 as t2 on t1.common-field = t2.common-field;</code>
-                    <li><b>Right Join: </b>Right Join is used to retrive the data which is available in left table and
+                    <li><b>Right Join: </b>Right Join is used to retrive the data which is available in right table and
                         common data. All the people from right will come and only common from left table come.</li>
+                    <p><b>Q: </b>WAQ to print every customer name with products they bought?</p>
+                    <span>Ans: </span><code>select t1.first_name, t2.item
+                            from customers as t1
+                            left join
+                            orders as t2 on t1.customer_id = t2.customer_id;</code>
+                    <li><b>Full Outer Join: </b>In MySQL, full outer join is not possible but can be achieved by
+                        <span>'UNION'</span>.
+                    </li>
+                    <span>Syntax: </span><code>left join query UNION right join query;</code>
                 </ul>
+            </ul>
+
+            <h3>'Having' Clause:</h3>
+            <p>Having is used in combination with the group by clause. It will work after the group by has worked and where is worked before group by.</p>
+
+            <p><b>Q: </b>WAQ to print the list of countries who have more than 3 employees?</p>
+            <span>Ans: </span><code>select country, count(country) from employees group by country having count(country) > 3;</code>
+
+            <p><b>Q: </b>WAQ to divide students based on gender avg their marks print only their average is greater than 85?</p>
+            <span>Ans: </span><code>select gender, avg(smark) from students group by gender having avg(smark) > 85;</code>
+
+            <h3>Difference between 'Where' and 'Having':</h3>
+            <ul>
+                <li>'Where' will be applied before group by.</li>
             </ul>
         </div>
     </div>
