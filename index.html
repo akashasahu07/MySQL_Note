@@ -551,11 +551,38 @@
                     <br>create procedure countryWise(c varchar(20))
                     <br>begin select * from employees where country = c; end 
                     <br>//
-                <br>call countryWise("India");</code>
+                    <br>call countryWise("India");</code>
+
+                <p><b>Q: </b>Create a stored procedure that accepts a value (salary amount) and it should print all employees having more than mentioned?</p>
+                <span>Ans: </span>
+                <code>delimiter //
+                <br>create procedure GreaterSal(sal decimal(10, 2)) 
+                <br>begin
+                <br>select * from employees where salary > sal;
+                <br>end
+                <br>//
+                    
+                <br>call GreaterSal(80000);</code>
             </ul>
+
+            <h3>Functions</h3>
+            <p>Functions in MySQL also called stored functions. They are similar to "Stored Procedure" but they return a value.</p>
+            <span>Syntax:</span>
+            <code>
+                delimiter //
+                <br>create function "function-name" () returns "data-type"
+                <br>begin 
+                <br>logic
+                <br>return value;
+                <br>end
+                <br>//
+            </code>
+
+            <p><b>Q: </b>WAF that goes to each record/row and increase salary and return their sum?</p>
         </div>
     </div>
 
+    time 33 date 18
     <div class="backToTop"><a href="#top">↑</a></div>
 </body>
 
