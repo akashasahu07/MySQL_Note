@@ -553,7 +553,8 @@
                     <br>//
                     <br>call countryWise("India");</code>
 
-                <p><b>Q: </b>Create a stored procedure that accepts a value (salary amount) and it should print all employees having more than mentioned?</p>
+                <p><b>Q: </b>Create a stored procedure that accepts a value (salary amount) and it should print all
+                    employees having more than mentioned?</p>
                 <span>Ans: </span>
                 <code>delimiter //
                 <br>create procedure GreaterSal(sal decimal(10, 2)) 
@@ -566,7 +567,8 @@
             </ul>
 
             <h3>Functions</h3>
-            <p>Functions in MySQL also called stored functions. They are similar to "Stored Procedure" but they return a value.</p>
+            <p>Functions in MySQL also called stored functions. They are similar to "Stored Procedure" but they return a
+                value.</p>
             <span>Syntax:</span>
             <code>
                 delimiter //
@@ -579,10 +581,69 @@
             </code>
 
             <p><b>Q: </b>WAF that goes to each record/row and increase salary and return their sum?</p>
+            <span>Ans: </span>
+            <code>
+                declare sumValues decimal(10, 2)
+                <br>delimiter //
+                <br>create function salaryUpdate() returns decimal(10, 2)
+                <br>begin
+                <br>select sum(salary) into sumValues
+                <br>from employeesbr
+                <br>return salary
+                <br>end //
+                <br>sumValues()
+            </code>
+
+            <h3>DCL Commands</h3>
+            <ul>
+                <li>These commnads are used to control the data such that it gives control over how data should be
+                    passed.</li>
+                <li>The commands are <span>GRANT</span> and <span>REVOKE</span>.</li>
+                <p><b>GRANT: </b>Grant is used to provide privilages to be granted.</p>
+                <span>Example: </span>
+                <code>Select, Insert, Delete etc.</code>
+
+                <p><b>REVOKE: </b>Revoke is used take the privilages to be granted.</p>
+                <span>Example: </span>
+                <code>Rolebased Databases</code>
+            </ul>
+
+            <h3>TCL (Transaction Control Language)</h3>
+            <p>These commands are used to manage/control the transactions. Every statement can itself a transaction.</p>
+            <ul>
+                <li><b>ROLLBACK: </b>Rollback is used to bring databse of pervious state. If want to retrive the previous deleted data then must use "set autocommit = false". Beacuse MySQL by default "set autocommit = true". Rollback return to the first state.</li>
+
+                <span>To Delete: </span>
+                <code>set autocommit = false;
+                <br>select * from students;
+                <br>delete from students 
+                <br>where rno = 2</code>
+                <br>
+                <span>To Rollback: </span>
+                <code>select * from students;
+                <br>rollback;</code>
+
+                <li><b>COMMIT: </b>Commit is used to save the database of current state and remove the previous states permanently.</li>
+                <li><b>SAVEPOINT: </b>Creates a Savepoint within the transaction so that rollback will go to that particular point. <br>It helps to goes at the specific point which is deleted when but rollback goes at the first state it doesn't care after first what you change.</li>
+                <span>Syntax: </span>
+                <code>select * from students;
+                    <br>savepoint "savepoint-name";
+                    <br>"other-line-code"
+                    <br>rollback to "savepoint-name"
+                    <br>(It will return the savepoint directly after save point what you did it doesn't matter).
+                </code>
+            </ul>
+
+            <h3>Normalization</h3>
+            <ul>
+                <li>It is the process of organizing data in tables/databases to minimize data redundancy and improve data integrity.</li>
+                <li><b>1NF: </b>Each cell in a table must contain atomic value(only one value).</li>
+                <li><b>2NF: </b>Each non-key attribute must depend on primary key.</li>
+                <li><b>3NF: </b>If a table is in 2NF and in case non-key attribute depend on other values than primary key. Split into smaller tables.</li>
+            </ul>
         </div>
     </div>
 
-    time 33 date 18
     <div class="backToTop"><a href="#top">↑</a></div>
 </body>
 
