@@ -611,7 +611,9 @@
             <h3>TCL (Transaction Control Language)</h3>
             <p>These commands are used to manage/control the transactions. Every statement can itself a transaction.</p>
             <ul>
-                <li><b>ROLLBACK: </b>Rollback is used to bring databse of pervious state. If want to retrive the previous deleted data then must use "set autocommit = false". Beacuse MySQL by default "set autocommit = true". Rollback return to the first state.</li>
+                <li><b>ROLLBACK: </b>Rollback is used to bring databse of pervious state. If want to retrive the
+                    previous deleted data then must use "set autocommit = false". Beacuse MySQL by default "set
+                    autocommit = true". Rollback return to the first state.</li>
 
                 <span>To Delete: </span>
                 <code>set autocommit = false;
@@ -623,8 +625,11 @@
                 <code>select * from students;
                 <br>rollback;</code>
 
-                <li><b>COMMIT: </b>Commit is used to save the database of current state and remove the previous states permanently.</li>
-                <li><b>SAVEPOINT: </b>Creates a Savepoint within the transaction so that rollback will go to that particular point. <br>It helps to goes at the specific point which is deleted when but rollback goes at the first state it doesn't care after first what you change.</li>
+                <li><b>COMMIT: </b>Commit is used to save the database of current state and remove the previous states
+                    permanently.</li>
+                <li><b>SAVEPOINT: </b>Creates a Savepoint within the transaction so that rollback will go to that
+                    particular point. <br>It helps to goes at the specific point which is deleted when but rollback goes
+                    at the first state it doesn't care after first what you change.</li>
                 <span>Syntax: </span>
                 <code>select * from students;
                     <br>savepoint "savepoint-name";
@@ -636,10 +641,12 @@
 
             <h3>Normalization</h3>
             <ul>
-                <li>It is the process of organizing data in tables/databases to minimize data redundancy and improve data integrity.</li>
+                <li>It is the process of organizing data in tables/databases to minimize data redundancy and improve
+                    data integrity.</li>
                 <li><b>1NF: </b>Each cell in a table must contain atomic value(only one value).</li>
                 <li><b>2NF: </b>Each non-key attribute must depend on primary key.</li>
-                <li><b>3NF: </b>If a table is in 2NF and in case non-key attribute depend on other values than primary key. Split into smaller tables.</li>
+                <li><b>3NF: </b>If a table is in 2NF and in case non-key attribute depend on other values than primary
+                    key. Split into smaller tables.</li>
             </ul>
         </div>
     </div>
