@@ -648,6 +648,83 @@
                 <li><b>3NF: </b>If a table is in 2NF and in case non-key attribute depend on other values than primary
                     key. Split into smaller tables.</li>
             </ul>
+
+
+            <h3>Project IPL</h3>
+            <ul>
+                <li>
+                    <b>Step - 1:</b>
+                    Go to Kaggle download a dataset.
+                </li>
+                <li>
+                    <b>Step - 2:</b>
+                    Open MySQL Workbench
+                </li>
+                <li>
+                    <b>Step - 3:</b>
+                    <code>create database ipl;</code>
+                </li>
+                <li>
+                    <b>Step - 4:</b>
+                    Right click to ipl database click "Table data import Wizard" then select the Excel file and click
+                    next, Then click finish.
+                </li>
+
+                <p><b>Q: </b>WAQ to print total number of matches happened season wise?</p>
+                <span>Ans:</span>
+                <code>select season, count(*) as no_of_matches
+                    from matches
+                    group by season;</code>
+
+                <p><b>Q: </b>WAQ to print total number of matches won by each team season wise?</p>
+                <span>Ans: </span>
+                <code>select season, winner, count(*) as no_of_matches
+                    from matches
+                    group by winner, season;</code>
+
+                <p><b>Q: </b>WAQ to find total matches won by each team?</p>
+                <span>Ans: </span>
+                <code>select winner, count(*) as total_winnings
+                    from matches
+                    group by winner 
+                    order by total_winnings desc;</code>
+
+                <p><b>Q: </b>WAQ to print number of winnings each team got pitch wise?</p>
+                <span>Ans: </span>
+                <code>select venue, winner, count(*) as no_of_matches
+                    from matches
+                    group by winner, venue
+                    order by no_of_matches desc;</code>
+                <p><b>Q: </b>WAQ to print top 5 teams in terms of winning?</p>
+                <span>Ans: </span>
+                <code> select winner, count(*) as top_winner
+                    from matches 
+                    group by winner
+                    order by top_winner desc;
+                </code>
+
+                <li>
+                    <b>Step - 5: </b>
+                    Search Power bi desktop download, and download it.
+                </li>
+
+                <li>
+                    <b>Step - 6: </b>
+                    Open Power Bi desktop app, create blank template.
+                </li>
+
+                <li>
+                    <b>Step - 7: </b>
+                    Click Import data from Excel/Get data - Excel Workbook. Select files. Then Click Load.
+                </li>
+
+                <li>
+                    <b>Step - 8: </b>
+                    Then in right side select the files and select one chart, Then don't save or signup Just go to file and export as pdf.
+                </li>
+            </ul>
+
+
         </div>
     </div>
 
