@@ -14,6 +14,11 @@
             <h1>MySQL and MongoDB Notes</h1>
         </div>
 
+        <div class="btn">
+            <button><a href="#mysql">MySQL</a></button>
+            <button><a href="#mongodb">MongoDB</a></button>
+        </div>
+
         <div class="content">
             <h3>Introduction to Database:</h3>
             <ul>
@@ -53,510 +58,556 @@
                 <li>Open Workbench (It is GUI tool) to write SQL code to make sure understand</li>
             </ul>
 
-            <h3 class="center">MySQL</h3>
-            <ul>
-                <li>MySQL follows RDBMS, here every data is linked with tables. Tables uses row and columns</li>
-                <li>Open Workbench and create a blank page and test</li>
-                <li>To create Database in MySQL</li>
-                <code>CREATE DATABASE "database-name";</code>
-                <li>To use Database</li>
-                <code>USE "database-name";</code>
-            </ul>
-
-            <h3>Datatypes</h3>
-            <ul>
-                <li>Datatypes are used to define the type of data it holds. MySQL provides numerous datatypes. Out of
-                    which, popular/frequently used are: </li>
+            <h3 class="center" id="mysql">MySQL</h3>
+            <div class="mysql">
                 <ul>
-                    <li><b>Int: </b>Used for integer columns.</li>
-                    <span>Example: Only integers can be allowed.</span>
-                    <li><b>Varchar: </b>Used for string columns with the Dynamic number of characters.</li>
-                    <span>Example: varchar(4) [means only characters allowed max 4 not moer than 4]</span>
-                    <span>Ram, Raju, Sam (is allowed) Krish(not allowed)</span>
-                    <li><b>Char: </b>Used for string columns with fixed number of characters.</li>
-                    <span>char(1) [only one character is allowed not more not less]</span>
-                    <li><b>Decimal(min total digit, min total digit after decimal): </b>Used for decimal values.</li>
-                    <span>Example: decimal(10, 2)</span>
-                    <li><b>Date: </b>Used for complete dates.</li>
-                    <span>Format: 'YYYY-MM-DD' [2025-02-06]</span>
+                    <li>MySQL follows RDBMS, here every data is linked with tables. Tables uses row and columns</li>
+                    <li>Open Workbench and create a blank page and test</li>
+                    <li>To create Database in MySQL</li>
+                    <code>CREATE DATABASE "database-name";</code>
+                    <li>To use Database</li>
+                    <code>USE "database-name";</code>
                 </ul>
-            </ul>
 
-            <h3>Comments</h3>
-            <ul>
-                <li><b>Single line Command: </b><code>-- create database school;</code></li>
-                <li><b>Multiline Command: </b><code>/* code inside */</code></li>
-            </ul>
-
-            <h3>MySQL Commands</h3>
-            <p>MySQL commands are divided mainly as 4 sub languages.</p>
-            <ul>
-                <li><b>DDL(Data Definition language): </b>These commands help us to structure our database</li>
-                <span>Example: CREATE, ALTER, RENAME, DROP, TRUNCATE etc.</span>
-                <li><b>DML(Data Manipulation Language): </b>These commands help us to manipulate or update or delete our
-                    data.</li>
-                <span>Example: INSERT, UPDATE, DELETE etc.</span>
+                <h3>Datatypes</h3>
                 <ul>
-                    <li>These commands also contain sub part called</li>
-                    <li><b>DQL(Data Query Language): </b>It's command is <span>select</span> which is used for queries.
-                    </li>
+                    <li>Datatypes are used to define the type of data it holds. MySQL provides numerous datatypes. Out
+                        of
+                        which, popular/frequently used are: </li>
+                    <ul>
+                        <li><b>Int: </b>Used for integer columns.</li>
+                        <span>Example: Only integers can be allowed.</span>
+                        <li><b>Varchar: </b>Used for string columns with the Dynamic number of characters.</li>
+                        <span>Example: varchar(4) [means only characters allowed max 4 not moer than 4]</span>
+                        <span>Ram, Raju, Sam (is allowed) Krish(not allowed)</span>
+                        <li><b>Char: </b>Used for string columns with fixed number of characters.</li>
+                        <span>char(1) [only one character is allowed not more not less]</span>
+                        <li><b>Decimal(min total digit, min total digit after decimal): </b>Used for decimal values.
+                        </li>
+                        <span>Example: decimal(10, 2)</span>
+                        <li><b>Date: </b>Used for complete dates.</li>
+                        <span>Format: 'YYYY-MM-DD' [2025-02-06]</span>
+                    </ul>
                 </ul>
-                <li><b>DCL(Data Control Language): </b>These commands helps to control the data which user manipulate.
-                </li>
-                <span>Example: GRANT, REVOKE etc.</span>
-                <li><b>TCL(Transaction Control Language): </b>These commands helps to control the transactions and undo
-                    the previous query.</li>
-                <span>Example: COMMIT, ROLLBACK, SAVEPOINT etc.</span>
-            </ul>
 
-            <h3>DDL(Data Definition Language)</h3>
-            <p>These commands are used to build the structure of database.</p>
-            <ul>
-                <li><b>create: </b>Create is used to create databases, tables, views etc.</li>
+                <h3>Comments</h3>
                 <ul>
-                    <li><b>Database: </b><span>Syntax: </span><code>CREATE DATABASE "database-name";</code></li>
-                    <li><b>Table: </b><span>Syntax:
-                        </span><code>CREATE TABLE "table-name(column1 datatype,<br>column2 datatype,<br> column3 datatype, ...)";</code>
+                    <li><b>Single line Command: </b><code>-- create database school;</code></li>
+                    <li><b>Multiline Command: </b><code>/* code inside */</code></li>
+                </ul>
+
+                <h3>MySQL Commands</h3>
+                <p>MySQL commands are divided mainly as 4 sub languages.</p>
+                <ul>
+                    <li><b>DDL(Data Definition language): </b>These commands help us to structure our database</li>
+                    <span>Example: CREATE, ALTER, RENAME, DROP, TRUNCATE etc.</span>
+                    <li><b>DML(Data Manipulation Language): </b>These commands help us to manipulate or update or delete
+                        our
+                        data.</li>
+                    <span>Example: INSERT, UPDATE, DELETE etc.</span>
+                    <ul>
+                        <li>These commands also contain sub part called</li>
+                        <li><b>DQL(Data Query Language): </b>It's command is <span>select</span> which is used for
+                            queries.
+                        </li>
+                    </ul>
+                    <li><b>DCL(Data Control Language): </b>These commands helps to control the data which user
+                        manipulate.
                     </li>
-                    <span>Example:</span><code>CREATE TABLE students(
+                    <span>Example: GRANT, REVOKE etc.</span>
+                    <li><b>TCL(Transaction Control Language): </b>These commands helps to control the transactions and
+                        undo
+                        the previous query.</li>
+                    <span>Example: COMMIT, ROLLBACK, SAVEPOINT etc.</span>
+                </ul>
+
+                <h3>DDL(Data Definition Language)</h3>
+                <p>These commands are used to build the structure of database.</p>
+                <ul>
+                    <li><b>create: </b>Create is used to create databases, tables, views etc.</li>
+                    <ul>
+                        <li><b>Database: </b><span>Syntax: </span><code>CREATE DATABASE "database-name";</code></li>
+                        <li><b>Table: </b><span>Syntax:
+                            </span><code>CREATE TABLE "table-name(column1 datatype,<br>column2 datatype,<br> column3 datatype, ...)";</code>
+                        </li>
+                        <span>Example:</span><code>CREATE TABLE students(
                     sid int, sname varchar(20), sfee decimal(10,2)
                     );</code>
-                </ul>
-                <li><b>Rename: </b>Rename is used to rename the table, view etc.</li>
-                <span>Syntax: </span><code>RENAME TABLE "old-table-name" TO "new-table-name"</code><br>
-                <span>Example: </span> <code>RENAME TABLE teachers TO faculty;</code>
-                <li><b>Alter: </b>Alter is used to add/modify/delete columns from database table</li>
-                <ul>
-                    <li><b>Add A Column: </b><br>
-                        <span>Syntax:
-                        </span><code>ALTER TABLE "table-name" ADD COLUMN "column-name" datatype;</code><br>
-                        <span>Example: </span><code>-- Add column gender into the table <br>
+                    </ul>
+                    <li><b>Rename: </b>Rename is used to rename the table, view etc.</li>
+                    <span>Syntax: </span><code>RENAME TABLE "old-table-name" TO "new-table-name"</code><br>
+                    <span>Example: </span> <code>RENAME TABLE teachers TO faculty;</code>
+                    <li><b>Alter: </b>Alter is used to add/modify/delete columns from database table</li>
+                    <ul>
+                        <li><b>Add A Column: </b><br>
+                            <span>Syntax:
+                            </span><code>ALTER TABLE "table-name" ADD COLUMN "column-name" datatype;</code><br>
+                            <span>Example: </span><code>-- Add column gender into the table <br>
                             ALTER TABLE students ADD COLUMN gender char(1);</code>
-                        <p>If you need to add a column in a specific location like after a perticular column we want to
-                            add a column then</p>
-                        <span>Example: </span><br>
-                        <code>-- After sname add phone Number <br>
+                            <p>If you need to add a column in a specific location like after a perticular column we want
+                                to
+                                add a column then</p>
+                            <span>Example: </span><br>
+                            <code>-- After sname add phone Number <br>
                             ALTER TABLE students ADD COLUMN phno int after sname;</code>
+                        </li>
+                        <li><b>Rename Column: </b><br>
+                            <span>Syntax:
+                            </span><code>ALTER TABLE "table-name" CHANGE "old-col-name" "new-col-name" datatype;</code><br>
+                            <span>Example: </span><code>ALTER TABLE faculty CHANGE tsalary salary decimal(10,2);</code>
+                        </li>
+                        <li><b>Delete a Column: </b><br>
+                            <span>Syntax: </span><code>ALTER TABLE "table-name" DROP COLUMN "column-name";</code><br>
+                            <span>Example: </span><code>ALTER TABLE faculty DROP COLUMN salary;</code>
+                        </li>
+                    </ul>
+                    <li><b>Drop: </b>Drop is used to delete a table/column/database etc.</li>
+                    <span>Syntax:
+                    </span><code>-- Delete a database/table <br>DROP DATABASE "database-name"/"table-name"</code><br>
+                    <span>Example: </span><code>DROP DATABASE school; <br>DROP TABLE students;</code>
+                    <li><b>Truncate: </b>Truncate is used to delete only data from the table but table will be there..
                     </li>
-                    <li><b>Rename Column: </b><br>
-                        <span>Syntax:
-                        </span><code>ALTER TABLE "table-name" CHANGE "old-col-name" "new-col-name" datatype;</code><br>
-                        <span>Example: </span><code>ALTER TABLE faculty CHANGE tsalary salary decimal(10,2);</code>
-                    </li>
-                    <li><b>Delete a Column: </b><br>
-                        <span>Syntax: </span><code>ALTER TABLE "table-name" DROP COLUMN "column-name";</code><br>
-                        <span>Example: </span><code>ALTER TABLE faculty DROP COLUMN salary;</code>
-                    </li>
+                    <span>Syntax: </span><code>TRUNCATE TABLE "table-name";</code>
                 </ul>
-                <li><b>Drop: </b>Drop is used to delete a table/column/database etc.</li>
-                <span>Syntax:
-                </span><code>-- Delete a database/table <br>DROP DATABASE "database-name"/"table-name"</code><br>
-                <span>Example: </span><code>DROP DATABASE school; <br>DROP TABLE students;</code>
-                <li><b>Truncate: </b>Truncate is used to delete only data from the table but table will be there..</li>
-                <span>Syntax: </span><code>TRUNCATE TABLE "table-name";</code>
-            </ul>
-            <p><b>Q: What is the difference between drop, truncate, and delete command ?</b></p>
-            <p>They are used to remove data, but they function differently.</p>
-            <ul>
-                <li><b>DELETE: </b>Removes specific rows from a table based on a WHERE condition. If no WHERE clause is
-                    specified, all rows are deleted.</li>
-                <span>Syntax: </span> <code>DELETE FROM "table-name" WHERE condition;</code>
-                <li><b>TRUNCATE: </b>Removes all rows from a table.</li>
-                <span>Syntax: </span> <code>TRUNCATE TABLE "table-name";</code>
-                <li><b>DROP: </b>Completely removes the table from the database, including its structure.</li>
-                <span>Syntax: </span> <code>DROP TABLE "table-name";</code>
-            </ul>
+                <p><b>Q: What is the difference between drop, truncate, and delete command ?</b></p>
+                <p>They are used to remove data, but they function differently.</p>
+                <ul>
+                    <li><b>DELETE: </b>Removes specific rows from a table based on a WHERE condition. If no WHERE clause
+                        is
+                        specified, all rows are deleted.</li>
+                    <span>Syntax: </span> <code>DELETE FROM "table-name" WHERE condition;</code>
+                    <li><b>TRUNCATE: </b>Removes all rows from a table.</li>
+                    <span>Syntax: </span> <code>TRUNCATE TABLE "table-name";</code>
+                    <li><b>DROP: </b>Completely removes the table from the database, including its structure.</li>
+                    <span>Syntax: </span> <code>DROP TABLE "table-name";</code>
+                </ul>
 
-            <h3>DML(Data Manipulation Language)</h3>
-            <p>These commands are used to manipulate the database such as inserting data into tables, updating data in
-                tables, deleting data from tables.</p>
+                <h3>DML(Data Manipulation Language)</h3>
+                <p>These commands are used to manipulate the database such as inserting data into tables, updating data
+                    in
+                    tables, deleting data from tables.</p>
 
-            <ul>
-                <li><b>INSERT: </b>Insert command is used to insert the data in tables.</li>
-                <span>Syntax: </span>
-                <code>INSERT INTO "table-name" VALUES (col1-value), (col2-value), (col3-value),... etc);</code><br>
-                <span>Example: </span> <code>-- Insert values in table <br>
+                <ul>
+                    <li><b>INSERT: </b>Insert command is used to insert the data in tables.</li>
+                    <span>Syntax: </span>
+                    <code>INSERT INTO "table-name" VALUES (col1-value), (col2-value), (col3-value),... etc);</code><br>
+                    <span>Example: </span> <code>-- Insert values in table <br>
                     INSERT INTO students VALUES <br>(1, "Tony",789654, 20000.00, "M"),<br>
                     (2, "Natasa", 456987, 25000.00, "F"),<br>
                     (3, "Steve", 873546, 30000.00, "M");</code>
-                <p>This will insert 3 row data at a time.</p>
-            </ul>
+                    <p>This will insert 3 row data at a time.</p>
+                </ul>
 
-            <h3>Constraints</h3>
-            <p>In MySQL, tables consists of columns which need to follow certain conditions. The conditions or rules set
-                to the columns are called Constraints.</p>
-            <ul>
-                <li><b>UNIQUE: </b>Any column which contains <span>UNIQUE</span> constraints must have unique values for
-                    every record. Unique also accepts NULL values empty ones are filled with NULL value.</li>
-                <li><b>NOT NULL: </b>Any column which contains <span>NOT NULL</span> constraint must contain values
-                    which are not null. Required fields.</li>
-                <li><b>AUTO INCREMENT: </b>Any column which contains auto increment will increment the value of column
-                    automatically.</li>
-                <li><b>DEFAULT: </b>Any column which contains default constraint can provides a value default to all
-                    rows. If user forget to add value it will add the default value to that row.</li>
-                <li><b>CHECK: </b>Any column which contains <span>CHECK </span>constraints is used to check all values
-                    in that column are satisfying a condition or not. If i set user should enter their age should
-                    greater than 18 then only age that greater than 18 should accepted.</li>
-                <li><b>PRIMARY KEY: </b>Primary key must be unique and not null value. It is a column by which we can
-                    identify each
-                    and every row individually.</li>
-                <li><b>FOREIGN KEY: </b>Foreign Key is a Primary key in another table and got as a reference to this
-                    table.</li>
-            </ul>
-            <span>Example: </span><code>-- Create table employee <br>
+                <h3>Constraints</h3>
+                <p>In MySQL, tables consists of columns which need to follow certain conditions. The conditions or rules
+                    set
+                    to the columns are called Constraints.</p>
+                <ul>
+                    <li><b>UNIQUE: </b>Any column which contains <span>UNIQUE</span> constraints must have unique values
+                        for
+                        every record. Unique also accepts NULL values empty ones are filled with NULL value.</li>
+                    <li><b>NOT NULL: </b>Any column which contains <span>NOT NULL</span> constraint must contain values
+                        which are not null. Required fields.</li>
+                    <li><b>AUTO INCREMENT: </b>Any column which contains auto increment will increment the value of
+                        column
+                        automatically.</li>
+                    <li><b>DEFAULT: </b>Any column which contains default constraint can provides a value default to all
+                        rows. If user forget to add value it will add the default value to that row.</li>
+                    <li><b>CHECK: </b>Any column which contains <span>CHECK </span>constraints is used to check all
+                        values
+                        in that column are satisfying a condition or not. If i set user should enter their age should
+                        greater than 18 then only age that greater than 18 should accepted.</li>
+                    <li><b>PRIMARY KEY: </b>Primary key must be unique and not null value. It is a column by which we
+                        can
+                        identify each
+                        and every row individually.</li>
+                    <li><b>FOREIGN KEY: </b>Foreign Key is a Primary key in another table and got as a reference to this
+                        table.</li>
+                </ul>
+                <span>Example: </span><code>-- Create table employee <br>
                 create table employees ( <br>eid int primary key auto_increment, ename varchar(30) not null, 
                 <br>age int check(age >= 18), country varchar(20) default "India", <br>salary decimal(10,2)
                 );</code>
-            <p>If you want to add specific row values then</p>
-            <span>Example: </span><code>insert into employees (ename, age, salary) values
+                <p>If you want to add specific row values then</p>
+                <span>Example: </span><code>insert into employees (ename, age, salary) values
                     ("Stark", 27, 45000);</code>
 
-            <p><b>Q: </b>" create database school; <br>use the database;<br>create the table with following columnsbr
-            <ul>
-                <li>tid -- auto increment, primary key</li>
-                <li>tname -- not null</li>
-                <li>phno -- unique</li>
-                <li>country -- default "India"</li>
-                <li>salary -- minimum 20k</li>
-                <p>insert appropriate 2 - 3 rows of data "</p>
-            </ul>
-            </p>
-            <p><span>Ans: </span><code>
+                <p><b>Q: </b>" create database school; <br>use the database;<br>create the table with following
+                    columnsbr
+                <ul>
+                    <li>tid -- auto increment, primary key</li>
+                    <li>tname -- not null</li>
+                    <li>phno -- unique</li>
+                    <li>country -- default "India"</li>
+                    <li>salary -- minimum 20k</li>
+                    <p>insert appropriate 2 - 3 rows of data "</p>
+                </ul>
+                </p>
+                <p><span>Ans: </span><code>
                     create database school; <br> use school; <br>create table teachers (tid int primary key auto_increment, <br> tname varchar(20) not null, <br> phno varchar(15) unique, <br> country varchar(20) default "India", <br> salary decimal(10, 2) check (salary >= 20000));
                 </code><br>
-                <span>Example: </span><br><code>insert into teachers values( 1, "Peter", "4875296589", "India" ,25000); <br>
+                    <span>Example: </span><br><code>insert into teachers values( 1, "Peter", "4875296589", "India" ,25000); <br>
                 insert into teachers (tname, phno, salary) values
                 ("Scott", "3678297649", 30000),
                 ("Mark", "7297548296", 35000);</code>
-            </p>
-
-            <ul>
-                <li><b>UPDATE: </b>To update a particular data/field in MySQL, we can use <span>UPDATE</span> command.
-                    is is often used with <span>"SET" </span>command to assign a value and <span>"WHERE" </span>clause
-                    to specify the column.</li>
-                <span>Syntax: </span><code>UPDATE "table-name" SET "column-name=value" WHERE "condition";</code>
-                <br>
-                <span>Example: </span><code>UPDATE teachers set salary = 50000;</code>
-                <p>If this example code will run it will update all the row salary. To update specific row value must
-                    use <span>WHERE </span>clause.</p>
-                <p>For the first time when we run <span>UPDATE </span>command it raises some error.</p>
-                <span>Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE
-                    that uses a KEY column. To disable safe mode, toggle the option in Preferences -> SQL Editor and
-                    reconnect.</span>
-                <p>To prevent this follow this steps in MySQL Workbench: </p>
-                <ul>
-                    <li>Edit</li>
-                    <li>Preferences</li>
-                    <li>SQL Editor</li>
-                    <li>Scroll down and uncheck the Safe Updates. Then OK</li>
-                    <li>Then close Workbench and reopen then it works.</li>
-                    <li>Or we can use <code>set sql_safe_updates = false;</code></li>
-                </ul>
-                <span>Example: </span><code>update teachers set salary = 50000 where tname = "Peter";</code>
-
-                <p><b>Q: </b>Change country name to "United States" where tid is 7?</p>
-                <span>Ans: </span><code>update teachers set country = "United States" where tid = 7;</code>
-                <li><b>DELETE: </b><span>DELETE </span>is used to delete a specific data/field of a record (row).</li>
-                <span>Syntax: </span><code>DELETE FROM "table-name" WHERE "column-name = value";</code><br>
-                <span>Example: </span><code>delete from "table-name";</code>
-                <p>Then it will delete all the data from the table like TRUNCATE.</p>
-                <p><span>Note: </span>When want to delete then must use unique value to target specific data. Like id.
                 </p>
 
-                <span>Example: </span><code>delete from teachers where tname = "Barry";</code>
-            </ul>
-            <p>DML commands also suggest a special command which is used to read the data called "DQL(Data Query
-                Language)".</p>
-            <span>Example: </span><code>SELECT</code>
-            <p>To show full table data <br><code>SELECT * FROM "table-name";</code></p>
-            <ul>
-                <li>The above command will list all data of records in a specific table.</li>
-                <li>We can get specific columns using <span>SELECT</span><br><span>Syntax:
-                    </span><code>select col1, col2,... from "table-name";</code></li>
-                <span>Example: </span><code>select tname, salary from teachers;</code>
-                <li>We can get specific records of data by using where clause.</li>
-                <span>Syntax: </span><code>select col1, col2,... from "table-name" where "condition";</code><br>
-                <span>Example: </span><code>select tname, country from teachers where salary > 25000;</code>
-                <p><b>Q: </b>Write an SQL query to print names of Teachers from India.?</p>
-                <span>Ans: </span><code>select tname from teachers where country = "India";</code>
-            </ul>
-
-            <h3>Operators</h3>
-            <p>There are different operators in MySQL which are used to specify an operation or condition.</p>
-            <ul>
-                <li><b>Arithmatic Operator: </b>[+, -, *, /, %]</li>
-                <li><b>Logical Operator: </b>and(&&), or(||), not(!)</li>
-                <li><b>Null Operator: </b>is null, is not null</li>
-                <li><b>Like Operator: </b>It is used to identify a specific pattern. It only works on strings not
-                    numbers.</li>
                 <ul>
-                    <li><b>'%' -- </b>Means any number of character and any character can be repeated.</li>
-                    <li><b>'_' -- </b>Means any character only one time is under score('_')</li>
-                    <span>Example: </span><code>'_a_' --> raj, sai(three character only).</code>
-                </ul>
-                <p><b>Q: </b>WAQ to show all people whose name starts with 'p'?</p>
-                <span>Ans: </span><code>select * from teachers where tname like 'p%';</code>
-                <p>It means i want only first letter whose 'p' % means after 'p' anything can come i don't care.</p>
+                    <li><b>UPDATE: </b>To update a particular data/field in MySQL, we can use <span>UPDATE</span>
+                        command.
+                        is is often used with <span>"SET" </span>command to assign a value and <span>"WHERE"
+                        </span>clause
+                        to specify the column.</li>
+                    <span>Syntax: </span><code>UPDATE "table-name" SET "column-name=value" WHERE "condition";</code>
+                    <br>
+                    <span>Example: </span><code>UPDATE teachers set salary = 50000;</code>
+                    <p>If this example code will run it will update all the row salary. To update specific row value
+                        must
+                        use <span>WHERE </span>clause.</p>
+                    <p>For the first time when we run <span>UPDATE </span>command it raises some error.</p>
+                    <span>Error Code: 1175. You are using safe update mode and you tried to update a table without a
+                        WHERE
+                        that uses a KEY column. To disable safe mode, toggle the option in Preferences -> SQL Editor and
+                        reconnect.</span>
+                    <p>To prevent this follow this steps in MySQL Workbench: </p>
+                    <ul>
+                        <li>Edit</li>
+                        <li>Preferences</li>
+                        <li>SQL Editor</li>
+                        <li>Scroll down and uncheck the Safe Updates. Then OK</li>
+                        <li>Then close Workbench and reopen then it works.</li>
+                        <li>Or we can use <code>set sql_safe_updates = false;</code></li>
+                    </ul>
+                    <span>Example: </span><code>update teachers set salary = 50000 where tname = "Peter";</code>
 
-                <p><b>Q: </b>WAQ to show all people whose name ends with 'o'?</p>
-                <span>Ans: </span><code>select * from teachers where tname like '%o';</code>
-
-                <p><b>Q: </b>WAQ to show all people whose second letter in name is 'o'?</p>
-                <span>Ans: </span><code>select * from teachers where tname like '_o%';</code>
-
-                <p><b>Q: </b>WAQ to show all people whose third letter from last in the name is 'a'?</p>
-
-                <span>Ans: </span><code>select * from teachers where tname like '%a__';</code>
-                <p><b>Q: </b>Print all Employees name, age from employee table?</p>
-
-                <span>Ans: </span><code>select ename, age from employees;</code>
-
-                <p><b>Q: </b>Print all employees whose salary is greater than 20000?</p>
-
-                <span>Ans: </span><code>select * from employees where salary > 20000;</code>
-
-                <p><b>Q: </b>Print all employees whose age is not null?</p>
-
-                <span>Ans: </span><code>select * from employees where age is not null;</code>
-
-                <li><b>Assignment Operator: </b>Assignment Operators are used to assign certain values such as +=, -=,
-                    *=, /=, %=</li>
-
-                <li><b>Special Operators: </b>MySQL contains so many special operators such as between, in, any, exists,
-                    some etc...</li>
-
-                <ul>
-                    <li><b>Between: </b>It is used to specify the range. When salary is between 20000 and 50000</li>
-                    <p><b>Q: </b>WAQ to print all employees whose salary is between 20000 and 50000?</p>
-                    <span>Ans: </span><code>select * from employees where salary between 20000 and 50000;</code>
-                    <li><b>In: </b>'IN' is used to specify list of values.</li>
-                    <p><b>Q: </b>WAQ to print all employees details whose names 'Tony', 'Steve', 'Peter'?</p>
-                    <span>Ans: </span><code>select * from employees where ename in ('Tony', 'Steve', 'Peter');</code>
-                </ul>
-                <li><b>Clauses: </b>Clauses are used to structure or filter the query result.</li>
-                <ul>
-                    <li><b>Order by: </b>Order by is used to keep results in an Order (either ascending or descending
-                        order) by default it is ascending order.</li>
-
-                    <p><b>Q: </b>WAQ to print all the employee from "india" name in ascending order alphabetically?</p>
-
-                    <span>Ans: </span><code>select * from employees where country = "India" order by ename;</code><br>
-                    <span>In descing
-                        order</span><code>select * from employees where country = "India" order by ename desc;</code>
-
-                    <p><b>Q: </b>WAQ to print all employees whose salary is greater than 25k in descending order?</p>
-                    <span>Ans: </span><code>select * from employees where salary > 25000 order by salary desc;</code>
-
-                    <li><b>Limit: </b>Limit is used to limit the number of records to display after query. How many
-                        limit we have give we can recieve that number of recoreds only.</li>
-
-                    <p><b>Q: </b>WAQ to print name, age of highest salaried employee?</p>
-                    <span>Ans: </span><code>select ename, age from employees order by salary desc limit 1;</code>
-
-                    <p><b>Q: </b>WAQ to print names, age of 3 youngest employees in employees table?</p>
-                    <span>Ans:
-                    </span><code>select ename, age from employees where age is not null order by age limit 3;</code>
-
-                    <li><b>Offset: </b>Offset used to skip a records of data from the query results.</li>
-
-                    <p><b>Q: </b>WAQ to print second highest salary employee details?</p>
-                    <span>Ans: </span><code>select * from employees order by salary desc limit 1 offset 1;</code>
-
-                    <li><b>Group by: </b>Group by is used to group the records based on common field/column values.It is
-                        used for collective responses by using aggregate functions.</li>
-
-                    <p><b>Q: </b>WAQ to count number of employee based on their country?</p>
-                    <span>Ans: </span><code>select country, count(country) from employees group by country;</code>
-                </ul>
-
-                <li><b>Aggregate Function: </b>Aggregate functions are used mainly for collective data analysis.</li>
-                <ul>
-                    <li><b>Count(): </b>Count is used to count total number of records available in that group.</li>
-                    <p><b>Q: </b>WAQ to print how many items sold per category?</p>
-                    <span>Ans: </span><code>select category, count(category) from ecommerce group by category;</code>
-
-                    <li><b>Sum(): </b>Sum is used to add all the values available for a perticular group.</li>
-                    <p><b>Q: </b>WAQ to print total marks achieved by students based on their gender?</p>
-                    <span>Ans: </span><code>select gender, sum(smark) from students group by gender;</code>
-
-                    <li><b>Avg(): </b>Avg is used to print average of a column from a perticular group.</li>
-                    <p><b>Q: </b>WAQ to print average marks of students based on their gender?</p>
-                    <span>Ans: </span><code>select gender, avg(smark) from students group by gender;</code>
-
-                    <li><b>Max(): </b>Max is used to print maximum of a column from a perticular group.</li>
-
-                    <p><b>Q: </b>WAQ to print maximum marks of students based on gender?</p>
-                    <span>Ans: </span><code>select gender, max(smark) from students group by gender;</code>
-
-                    <li><b>Min(): </b>Min is used to print minimum value of a column from a perticular group.</li>
-                    <p><b>Q: </b>WAQ to print minimum mark of students based on their gender?</p>
-                    <span>Ans: </span><code>select gender, min(smark) from students group by gender;</code>
-
-                    <li><b>Distinct: </b>Distinct is used to get different records of data without duplication.</li>
-                    <p><b>Q: </b>WAQ to print total number of genders we have in students table.</p>
-                    <span>Ans: </span><code>select count(distinct gender) from students;</code>
-
-                    <li><b>Group_Concat(): </b>String_Concat can be used to print different values existed in each
-                        group.</li>
-                    <p><b>Q: </b>WAQ to print names of employees from diffrent countries along with total country count?
-                    </p>
-                    <span>Ans:
-                    </span><code>select country, count(country), group_concat(country) from employees group by country;</code>
-                    <p>It will print like This</p>
-                    <table>
-                        <tr>
-                            <td>India</td>
-                            <td>4</td>
-                            <td>India, India, India, India</td>
-                        </tr>
-                        <tr>
-                            <td>United States</td>
-                            <td>1</td>
-                            <td>United States</td>
-                        </tr>
-                    </table>
-                </ul>
-            </ul>
-            <h3>Joins</h3>
-            <ul>
-                <li>Joins are used to combine two or more number of tables and retrive the data based on common field
-                    connection.</li>
-                <li>If you want to join two table the first table you can create like this. It must have foreign key and
-                    references.</li>
-                <span>Example:
-                </span><code>create table Orders(order_id int primary key, item varchar(20) not null, amount int not null, customer_id int not null, foreign key(customer_id) references  Customers(customer_id) );</code>
-                <li>There are different joins existed in MySQL.</li>
-                <ul>
-                    <li><b>Inner Join: </b>Inner Join is used to retrive the data which is common on both the tables.
-                        Both table common data will come.
+                    <p><b>Q: </b>Change country name to "United States" where tid is 7?</p>
+                    <span>Ans: </span><code>update teachers set country = "United States" where tid = 7;</code>
+                    <li><b>DELETE: </b><span>DELETE </span>is used to delete a specific data/field of a record (row).
                     </li>
-                    <span>Syntax:
-                    </span><code>select t1.field1, t2.field2,... from table1 as t1 inner join table2 as t2 on t1.common-field = t2.common-field;</code>
-                    <p><b>Q: </b>WAQ to retrive first_name, item they bought?</p>
-                    <span>Ans: </span><code>select t1.first_name, t2.item
+                    <span>Syntax: </span><code>DELETE FROM "table-name" WHERE "column-name = value";</code><br>
+                    <span>Example: </span><code>delete from "table-name";</code>
+                    <p>Then it will delete all the data from the table like TRUNCATE.</p>
+                    <p><span>Note: </span>When want to delete then must use unique value to target specific data. Like
+                        id.
+                    </p>
+
+                    <span>Example: </span><code>delete from teachers where tname = "Barry";</code>
+                </ul>
+                <p>DML commands also suggest a special command which is used to read the data called "DQL(Data Query
+                    Language)".</p>
+                <span>Example: </span><code>SELECT</code>
+                <p>To show full table data <br><code>SELECT * FROM "table-name";</code></p>
+                <ul>
+                    <li>The above command will list all data of records in a specific table.</li>
+                    <li>We can get specific columns using <span>SELECT</span><br><span>Syntax:
+                        </span><code>select col1, col2,... from "table-name";</code></li>
+                    <span>Example: </span><code>select tname, salary from teachers;</code>
+                    <li>We can get specific records of data by using where clause.</li>
+                    <span>Syntax: </span><code>select col1, col2,... from "table-name" where "condition";</code><br>
+                    <span>Example: </span><code>select tname, country from teachers where salary > 25000;</code>
+                    <p><b>Q: </b>Write an SQL query to print names of Teachers from India.?</p>
+                    <span>Ans: </span><code>select tname from teachers where country = "India";</code>
+                </ul>
+
+                <h3>Operators</h3>
+                <p>There are different operators in MySQL which are used to specify an operation or condition.</p>
+                <ul>
+                    <li><b>Arithmatic Operator: </b>[+, -, *, /, %]</li>
+                    <li><b>Logical Operator: </b>and(&&), or(||), not(!)</li>
+                    <li><b>Null Operator: </b>is null, is not null</li>
+                    <li><b>Like Operator: </b>It is used to identify a specific pattern. It only works on strings not
+                        numbers.</li>
+                    <ul>
+                        <li><b>'%' -- </b>Means any number of character and any character can be repeated.</li>
+                        <li><b>'_' -- </b>Means any character only one time is under score('_')</li>
+                        <span>Example: </span><code>'_a_' --> raj, sai(three character only).</code>
+                    </ul>
+                    <p><b>Q: </b>WAQ to show all people whose name starts with 'p'?</p>
+                    <span>Ans: </span><code>select * from teachers where tname like 'p%';</code>
+                    <p>It means i want only first letter whose 'p' % means after 'p' anything can come i don't care.</p>
+
+                    <p><b>Q: </b>WAQ to show all people whose name ends with 'o'?</p>
+                    <span>Ans: </span><code>select * from teachers where tname like '%o';</code>
+
+                    <p><b>Q: </b>WAQ to show all people whose second letter in name is 'o'?</p>
+                    <span>Ans: </span><code>select * from teachers where tname like '_o%';</code>
+
+                    <p><b>Q: </b>WAQ to show all people whose third letter from last in the name is 'a'?</p>
+
+                    <span>Ans: </span><code>select * from teachers where tname like '%a__';</code>
+                    <p><b>Q: </b>Print all Employees name, age from employee table?</p>
+
+                    <span>Ans: </span><code>select ename, age from employees;</code>
+
+                    <p><b>Q: </b>Print all employees whose salary is greater than 20000?</p>
+
+                    <span>Ans: </span><code>select * from employees where salary > 20000;</code>
+
+                    <p><b>Q: </b>Print all employees whose age is not null?</p>
+
+                    <span>Ans: </span><code>select * from employees where age is not null;</code>
+
+                    <li><b>Assignment Operator: </b>Assignment Operators are used to assign certain values such as +=,
+                        -=,
+                        *=, /=, %=</li>
+
+                    <li><b>Special Operators: </b>MySQL contains so many special operators such as between, in, any,
+                        exists,
+                        some etc...</li>
+
+                    <ul>
+                        <li><b>Between: </b>It is used to specify the range. When salary is between 20000 and 50000</li>
+                        <p><b>Q: </b>WAQ to print all employees whose salary is between 20000 and 50000?</p>
+                        <span>Ans: </span><code>select * from employees where salary between 20000 and 50000;</code>
+                        <li><b>In: </b>'IN' is used to specify list of values.</li>
+                        <p><b>Q: </b>WAQ to print all employees details whose names 'Tony', 'Steve', 'Peter'?</p>
+                        <span>Ans:
+                        </span><code>select * from employees where ename in ('Tony', 'Steve', 'Peter');</code>
+                    </ul>
+                    <li><b>Clauses: </b>Clauses are used to structure or filter the query result.</li>
+                    <ul>
+                        <li><b>Order by: </b>Order by is used to keep results in an Order (either ascending or
+                            descending
+                            order) by default it is ascending order.</li>
+
+                        <p><b>Q: </b>WAQ to print all the employee from "india" name in ascending order alphabetically?
+                        </p>
+
+                        <span>Ans:
+                        </span><code>select * from employees where country = "India" order by ename;</code><br>
+                        <span>In descing
+                            order</span><code>select * from employees where country = "India" order by ename desc;</code>
+
+                        <p><b>Q: </b>WAQ to print all employees whose salary is greater than 25k in descending order?
+                        </p>
+                        <span>Ans:
+                        </span><code>select * from employees where salary > 25000 order by salary desc;</code>
+
+                        <li><b>Limit: </b>Limit is used to limit the number of records to display after query. How many
+                            limit we have give we can recieve that number of recoreds only.</li>
+
+                        <p><b>Q: </b>WAQ to print name, age of highest salaried employee?</p>
+                        <span>Ans: </span><code>select ename, age from employees order by salary desc limit 1;</code>
+
+                        <p><b>Q: </b>WAQ to print names, age of 3 youngest employees in employees table?</p>
+                        <span>Ans:
+                        </span><code>select ename, age from employees where age is not null order by age limit 3;</code>
+
+                        <li><b>Offset: </b>Offset used to skip a records of data from the query results.</li>
+
+                        <p><b>Q: </b>WAQ to print second highest salary employee details?</p>
+                        <span>Ans: </span><code>select * from employees order by salary desc limit 1 offset 1;</code>
+
+                        <li><b>Group by: </b>Group by is used to group the records based on common field/column
+                            values.It is
+                            used for collective responses by using aggregate functions.</li>
+
+                        <p><b>Q: </b>WAQ to count number of employee based on their country?</p>
+                        <span>Ans: </span><code>select country, count(country) from employees group by country;</code>
+                    </ul>
+
+                    <li><b>Aggregate Function: </b>Aggregate functions are used mainly for collective data analysis.
+                    </li>
+                    <ul>
+                        <li><b>Count(): </b>Count is used to count total number of records available in that group.</li>
+                        <p><b>Q: </b>WAQ to print how many items sold per category?</p>
+                        <span>Ans:
+                        </span><code>select category, count(category) from ecommerce group by category;</code>
+
+                        <li><b>Sum(): </b>Sum is used to add all the values available for a perticular group.</li>
+                        <p><b>Q: </b>WAQ to print total marks achieved by students based on their gender?</p>
+                        <span>Ans: </span><code>select gender, sum(smark) from students group by gender;</code>
+
+                        <li><b>Avg(): </b>Avg is used to print average of a column from a perticular group.</li>
+                        <p><b>Q: </b>WAQ to print average marks of students based on their gender?</p>
+                        <span>Ans: </span><code>select gender, avg(smark) from students group by gender;</code>
+
+                        <li><b>Max(): </b>Max is used to print maximum of a column from a perticular group.</li>
+
+                        <p><b>Q: </b>WAQ to print maximum marks of students based on gender?</p>
+                        <span>Ans: </span><code>select gender, max(smark) from students group by gender;</code>
+
+                        <li><b>Min(): </b>Min is used to print minimum value of a column from a perticular group.</li>
+                        <p><b>Q: </b>WAQ to print minimum mark of students based on their gender?</p>
+                        <span>Ans: </span><code>select gender, min(smark) from students group by gender;</code>
+
+                        <li><b>Distinct: </b>Distinct is used to get different records of data without duplication.</li>
+                        <p><b>Q: </b>WAQ to print total number of genders we have in students table.</p>
+                        <span>Ans: </span><code>select count(distinct gender) from students;</code>
+
+                        <li><b>Group_Concat(): </b>String_Concat can be used to print different values existed in each
+                            group.</li>
+                        <p><b>Q: </b>WAQ to print names of employees from diffrent countries along with total country
+                            count?
+                        </p>
+                        <span>Ans:
+                        </span><code>select country, count(country), group_concat(country) from employees group by country;</code>
+                        <p>It will print like This</p>
+                        <table>
+                            <tr>
+                                <td>India</td>
+                                <td>4</td>
+                                <td>India, India, India, India</td>
+                            </tr>
+                            <tr>
+                                <td>United States</td>
+                                <td>1</td>
+                                <td>United States</td>
+                            </tr>
+                        </table>
+                    </ul>
+                </ul>
+                <h3>Joins</h3>
+                <ul>
+                    <li>Joins are used to combine two or more number of tables and retrive the data based on common
+                        field
+                        connection.</li>
+                    <li>If you want to join two table the first table you can create like this. It must have foreign key
+                        and
+                        references.</li>
+                    <span>Example:
+                    </span><code>create table Orders(order_id int primary key, item varchar(20) not null, amount int not null, customer_id int not null, foreign key(customer_id) references  Customers(customer_id) );</code>
+                    <li>There are different joins existed in MySQL.</li>
+                    <ul>
+                        <li><b>Inner Join: </b>Inner Join is used to retrive the data which is common on both the
+                            tables.
+                            Both table common data will come.
+                        </li>
+                        <span>Syntax:
+                        </span><code>select t1.field1, t2.field2,... from table1 as t1 inner join table2 as t2 on t1.common-field = t2.common-field;</code>
+                        <p><b>Q: </b>WAQ to retrive first_name, item they bought?</p>
+                        <span>Ans: </span><code>select t1.first_name, t2.item
                         from Customers as t1
                         inner join
                         orders as t2 on
                         t1.customer_id = t2.customer_id</code>
 
-                    <p><b>Q: </b>WAQ to print customers name with total amount they spent?</p>
-                    <span>Ans: </span><code>select t1.first_name, sum(t2.amount) 
+                        <p><b>Q: </b>WAQ to print customers name with total amount they spent?</p>
+                        <span>Ans: </span><code>select t1.first_name, sum(t2.amount) 
                         from customers as t1
                         inner join
                         orders as t2 on 
                         t1.customer_id = t2.customer_id
                         group by t1.first_name;</code>
 
-                    <li><b>Left Join: </b>Left Join is used to retrive the data which is available in laft table and
-                        common data. All the people from left will come and only common from right table come. </li>
-                    <span>Syntax:
-                    </span><code>select t1.field1, t2.field2,... from table1 as t1 left join table2 as t2 on t1.common-field = t2.common-field;</code>
-                    <li><b>Right Join: </b>Right Join is used to retrive the data which is available in right table and
-                        common data. All the people from right will come and only common from left table come.</li>
-                    <p><b>Q: </b>WAQ to print every customer name with products they bought?</p>
-                    <span>Ans: </span><code>select t1.first_name, t2.item
+                        <li><b>Left Join: </b>Left Join is used to retrive the data which is available in laft table and
+                            common data. All the people from left will come and only common from right table come. </li>
+                        <span>Syntax:
+                        </span><code>select t1.field1, t2.field2,... from table1 as t1 left join table2 as t2 on t1.common-field = t2.common-field;</code>
+                        <li><b>Right Join: </b>Right Join is used to retrive the data which is available in right table
+                            and
+                            common data. All the people from right will come and only common from left table come.</li>
+                        <p><b>Q: </b>WAQ to print every customer name with products they bought?</p>
+                        <span>Ans: </span><code>select t1.first_name, t2.item
                             from customers as t1
                             left join
                             orders as t2 on t1.customer_id = t2.customer_id;</code>
-                    <li><b>Full Outer Join: </b>In MySQL, full outer join is not possible but can be achieved by
-                        <span>'UNION'</span>.
-                    </li>
-                    <span>Syntax: </span><code>left join query UNION right join query;</code>
+                        <li><b>Full Outer Join: </b>In MySQL, full outer join is not possible but can be achieved by
+                            <span>'UNION'</span>.
+                        </li>
+                        <span>Syntax: </span><code>left join query UNION right join query;</code>
+                    </ul>
                 </ul>
-            </ul>
 
-            <h3>'Having' Clause</h3>
-            <ul>
-                <li>Having is used in combination with the group by clause. It will work after the group by has worked
-                    and where is worked before group by.</li>
+                <h3>'Having' Clause</h3>
+                <ul>
+                    <li>Having is used in combination with the group by clause. It will work after the group by has
+                        worked
+                        and where is worked before group by.</li>
 
-                <p><b>Q: </b>WAQ to print the list of countries who have more than 3 employees?</p>
-                <span>Ans:
-                </span><code>select country, count(country) from employees group by country having count(country) > 3;</code>
+                    <p><b>Q: </b>WAQ to print the list of countries who have more than 3 employees?</p>
+                    <span>Ans:
+                    </span><code>select country, count(country) from employees group by country having count(country) > 3;</code>
 
-                <p><b>Q: </b>WAQ to divide students based on gender avg their marks print only their average is greater
-                    than 85?</p>
-                <span>Ans:
-                </span><code>select gender, avg(smark) from students group by gender having avg(smark) > 85;</code>
-            </ul>
+                    <p><b>Q: </b>WAQ to divide students based on gender avg their marks print only their average is
+                        greater
+                        than 85?</p>
+                    <span>Ans:
+                    </span><code>select gender, avg(smark) from students group by gender having avg(smark) > 85;</code>
+                </ul>
 
-            <h3>Difference between 'Where' and 'Having'</h3>
-            <ul>
-                <li>'Where' will be applied before group by. 'Having' will be applied after group by.</li>
-                <li>'Where' cann't handle aggregate functions. 'Having' can handle aggregate function.</li>
-                <span>Example: </span><code>count(), sum() etc.</code>
-                <li>'Where' and 'Having' both can use and /or and used for condition only.</li>
-            </ul>
+                <h3>Difference between 'Where' and 'Having'</h3>
+                <ul>
+                    <li>'Where' will be applied before group by. 'Having' will be applied after group by.</li>
+                    <li>'Where' cann't handle aggregate functions. 'Having' can handle aggregate function.</li>
+                    <span>Example: </span><code>count(), sum() etc.</code>
+                    <li>'Where' and 'Having' both can use and /or and used for condition only.</li>
+                </ul>
 
-            <h3>Sub - Queries</h3>
-            <ul>
-                <li>A subquery is a query nested inside another query. The inner query (Sub Query) returns result that
-                    is
-                    used by outer query.</li>
-                <span>Syntax:
-                </span><code>select columns from table1 where column = (select columns from table where condition);</code>
+                <h3>Sub - Queries</h3>
+                <ul>
+                    <li>A subquery is a query nested inside another query. The inner query (Sub Query) returns result
+                        that
+                        is
+                        used by outer query.</li>
+                    <span>Syntax:
+                    </span><code>select columns from table1 where column = (select columns from table where condition);</code>
 
-                <p><b>Q: </b>WAQ to print the name, country and salary of the person who have highest salary than india
-                    highest salary?</p>
-                <span>Ans:
-                </span><code>select ename, country, salary from employees where salary > (select max(salary) from employees where country = "India");</code>
+                    <p><b>Q: </b>WAQ to print the name, country and salary of the person who have highest salary than
+                        india
+                        highest salary?</p>
+                    <span>Ans:
+                    </span><code>select ename, country, salary from employees where salary > (select max(salary) from employees where country = "India");</code>
 
-                <p><b>Q: </b>WAQ to print list of student names, marks whose marks are greater than average male
-                    students mark?</p>
-                <span>Ans:
-                </span><code>select sname, smark from students where smark > (select avg(smark) from students group by gender having gender = "M");</code>
-            </ul>
+                    <p><b>Q: </b>WAQ to print list of student names, marks whose marks are greater than average male
+                        students mark?</p>
+                    <span>Ans:
+                    </span><code>select sname, smark from students where smark > (select avg(smark) from students group by gender having gender = "M");</code>
+                </ul>
 
-            <h3>Indexes</h3>
-            <ul>
-                <li>Indexes are used to speed up data retrival operations on database tables. It helps to retrive the
-                    data faster.</li>
-                <li>It works like books index allowing database to find rows quickly without scanning entire table or
-                    going row after row.</li>
-                <li>By default index will be created for primary key.</li>
-                <li>Create index:</li>
-                <span>Syntax: </span><code>create index "index-name" on "table-name"("column-name");</code>
-                <li>Delete Index:</li>
-                <span>Syntax: </span><code>drop index "index-name";</code>
-                <li>Indexes speed up Where, Order by, group by etc... commands but over indexing slows down Insert,
-                    Delete, Update.</li>
-                <span>Example: </span><code>create index stdName on students(sname);</code>
-            </ul>
+                <h3>Indexes</h3>
+                <ul>
+                    <li>Indexes are used to speed up data retrival operations on database tables. It helps to retrive
+                        the
+                        data faster.</li>
+                    <li>It works like books index allowing database to find rows quickly without scanning entire table
+                        or
+                        going row after row.</li>
+                    <li>By default index will be created for primary key.</li>
+                    <li>Create index:</li>
+                    <span>Syntax: </span><code>create index "index-name" on "table-name"("column-name");</code>
+                    <li>Delete Index:</li>
+                    <span>Syntax: </span><code>drop index "index-name";</code>
+                    <li>Indexes speed up Where, Order by, group by etc... commands but over indexing slows down Insert,
+                        Delete, Update.</li>
+                    <span>Example: </span><code>create index stdName on students(sname);</code>
+                </ul>
 
-            <h3>Views</h3>
-            <ul>
-                <li>Views are used as a virtual table based on the result of a SQL Query. It does not store data
-                    physically but provides a way to simplify queries.</li>
-                <li>View is a temporary table which is used to create by the result of another Query.</li>
-                <li>It acts like abstract layer over tables.</li>
-                <li>It provides security to the tables. Views cann't have indexes.</li>
-                <span>Syntax: </span><code>create view stdInfo as ("Query");</code><br>
-                <span>Example:
-                </span><code>create view stdInfo as select sname, smark from students where gender = 'M';</code>
-            </ul>
+                <h3>Views</h3>
+                <ul>
+                    <li>Views are used as a virtual table based on the result of a SQL Query. It does not store data
+                        physically but provides a way to simplify queries.</li>
+                    <li>View is a temporary table which is used to create by the result of another Query.</li>
+                    <li>It acts like abstract layer over tables.</li>
+                    <li>It provides security to the tables. Views cann't have indexes.</li>
+                    <span>Syntax: </span><code>create view stdInfo as ("Query");</code><br>
+                    <span>Example:
+                    </span><code>create view stdInfo as select sname, smark from students where gender = 'M';</code>
+                </ul>
 
-            <h3>Stored Procedure</h3>
-            <ul>
-                <li>A stored procedure is a precompiled collection of SQL statements stored in the database. It can
-                    accept inputs as parameters and perform operations.</li>
-                <li>It is used to improve performance and cache results in database it's main use is code reusability.
-                </li>
-                <span>Syntax:
-                </span><code>delimiter // 
+                <h3>Stored Procedure</h3>
+                <ul>
+                    <li>A stored procedure is a precompiled collection of SQL statements stored in the database. It can
+                        accept inputs as parameters and perform operations.</li>
+                    <li>It is used to improve performance and cache results in database it's main use is code
+                        reusability.
+                    </li>
+                    <span>Syntax:
+                    </span><code>delimiter // 
                     <br>create procedure "procedure_name"(parameter) 
                     <br>begin "Query" end 
                     <br>// 
                     <br>call "procedure_name"(argument)</code><br>
-                <span>Example: </span><code>delimiter // 
+                    <span>Example: </span><code>delimiter // 
                     <br>create procedure countryWise(c varchar(20))
                     <br>begin select * from employees where country = c; end 
                     <br>//
                     <br>call countryWise("India");</code>
 
-                <p><b>Q: </b>Create a stored procedure that accepts a value (salary amount) and it should print all
-                    employees having more than mentioned?</p>
-                <span>Ans: </span>
-                <code>delimiter //
+                    <p><b>Q: </b>Create a stored procedure that accepts a value (salary amount) and it should print all
+                        employees having more than mentioned?</p>
+                    <span>Ans: </span>
+                    <code>delimiter //
                 <br>create procedure GreaterSal(sal decimal(10, 2)) 
                 <br>begin
                 <br>select * from employees where salary > sal;
@@ -564,13 +615,14 @@
                 <br>//
                     
                 <br>call GreaterSal(80000);</code>
-            </ul>
+                </ul>
 
-            <h3>Functions</h3>
-            <p>Functions in MySQL also called stored functions. They are similar to "Stored Procedure" but they return a
-                value.</p>
-            <span>Syntax:</span>
-            <code>
+                <h3>Functions</h3>
+                <p>Functions in MySQL also called stored functions. They are similar to "Stored Procedure" but they
+                    return a
+                    value.</p>
+                <span>Syntax:</span>
+                <code>
                 delimiter //
                 <br>create function "function-name" () returns "data-type"
                 <br>begin 
@@ -580,9 +632,9 @@
                 <br>//
             </code>
 
-            <p><b>Q: </b>WAF that goes to each record/row and increase salary and return their sum?</p>
-            <span>Ans: </span>
-            <code>
+                <p><b>Q: </b>WAF that goes to each record/row and increase salary and return their sum?</p>
+                <span>Ans: </span>
+                <code>
                 declare sumValues decimal(10, 2)
                 <br>delimiter //
                 <br>create function salaryUpdate() returns decimal(10, 2)
@@ -594,141 +646,151 @@
                 <br>sumValues()
             </code>
 
-            <h3>DCL Commands</h3>
-            <ul>
-                <li>These commnads are used to control the data such that it gives control over how data should be
-                    passed.</li>
-                <li>The commands are <span>GRANT</span> and <span>REVOKE</span>.</li>
-                <p><b>GRANT: </b>Grant is used to provide privilages to be granted.</p>
-                <span>Example: </span>
-                <code>Select, Insert, Delete etc.</code>
+                <h3>DCL Commands</h3>
+                <ul>
+                    <li>These commnads are used to control the data such that it gives control over how data should be
+                        passed.</li>
+                    <li>The commands are <span>GRANT</span> and <span>REVOKE</span>.</li>
+                    <p><b>GRANT: </b>Grant is used to provide privilages to be granted.</p>
+                    <span>Example: </span>
+                    <code>Select, Insert, Delete etc.</code>
 
-                <p><b>REVOKE: </b>Revoke is used take the privilages to be granted.</p>
-                <span>Example: </span>
-                <code>Rolebased Databases</code>
-            </ul>
+                    <p><b>REVOKE: </b>Revoke is used take the privilages to be granted.</p>
+                    <span>Example: </span>
+                    <code>Rolebased Databases</code>
+                </ul>
 
-            <h3>TCL (Transaction Control Language)</h3>
-            <p>These commands are used to manage/control the transactions. Every statement can itself a transaction.</p>
-            <ul>
-                <li><b>ROLLBACK: </b>Rollback is used to bring databse of pervious state. If want to retrive the
-                    previous deleted data then must use "set autocommit = false". Beacuse MySQL by default "set
-                    autocommit = true". Rollback return to the first state.</li>
+                <h3>TCL (Transaction Control Language)</h3>
+                <p>These commands are used to manage/control the transactions. Every statement can itself a transaction.
+                </p>
+                <ul>
+                    <li><b>ROLLBACK: </b>Rollback is used to bring databse of pervious state. If want to retrive the
+                        previous deleted data then must use "set autocommit = false". Beacuse MySQL by default "set
+                        autocommit = true". Rollback return to the first state.</li>
 
-                <span>To Delete: </span>
-                <code>set autocommit = false;
+                    <span>To Delete: </span>
+                    <code>set autocommit = false;
                 <br>select * from students;
                 <br>delete from students 
                 <br>where rno = 2</code>
-                <br>
-                <span>To Rollback: </span>
-                <code>select * from students;
+                    <br>
+                    <span>To Rollback: </span>
+                    <code>select * from students;
                 <br>rollback;</code>
 
-                <li><b>COMMIT: </b>Commit is used to save the database of current state and remove the previous states
-                    permanently.</li>
-                <li><b>SAVEPOINT: </b>Creates a Savepoint within the transaction so that rollback will go to that
-                    particular point. <br>It helps to goes at the specific point which is deleted when but rollback goes
-                    at the first state it doesn't care after first what you change.</li>
-                <span>Syntax: </span>
-                <code>select * from students;
+                    <li><b>COMMIT: </b>Commit is used to save the database of current state and remove the previous
+                        states
+                        permanently.</li>
+                    <li><b>SAVEPOINT: </b>Creates a Savepoint within the transaction so that rollback will go to that
+                        particular point. <br>It helps to goes at the specific point which is deleted when but rollback
+                        goes
+                        at the first state it doesn't care after first what you change.</li>
+                    <span>Syntax: </span>
+                    <code>select * from students;
                     <br>savepoint "savepoint-name";
                     <br>"other-line-code"
                     <br>rollback to "savepoint-name"
                     <br>(It will return the savepoint directly after save point what you did it doesn't matter).
                 </code>
-            </ul>
+                </ul>
 
-            <h3>Normalization</h3>
-            <ul>
-                <li>It is the process of organizing data in tables/databases to minimize data redundancy and improve
-                    data integrity.</li>
-                <li><b>1NF: </b>Each cell in a table must contain atomic value(only one value).</li>
-                <li><b>2NF: </b>Each non-key attribute must depend on primary key.</li>
-                <li><b>3NF: </b>If a table is in 2NF and in case non-key attribute depend on other values than primary
-                    key. Split into smaller tables.</li>
-            </ul>
+                <h3>Normalization</h3>
+                <ul>
+                    <li>It is the process of organizing data in tables/databases to minimize data redundancy and improve
+                        data integrity.</li>
+                    <li><b>1NF: </b>Each cell in a table must contain atomic value(only one value).</li>
+                    <li><b>2NF: </b>Each non-key attribute must depend on primary key.</li>
+                    <li><b>3NF: </b>If a table is in 2NF and in case non-key attribute depend on other values than
+                        primary
+                        key. Split into smaller tables.</li>
+                </ul>
 
 
-            <h3>Project IPL</h3>
-            <ul>
-                <li>
-                    <b>Step - 1:</b>
-                    Go to Kaggle download a dataset.
-                </li>
-                <li>
-                    <b>Step - 2:</b>
-                    Open MySQL Workbench
-                </li>
-                <li>
-                    <b>Step - 3:</b>
-                    <code>create database ipl;</code>
-                </li>
-                <li>
-                    <b>Step - 4:</b>
-                    Right click to ipl database click "Table data import Wizard" then select the Excel file and click
-                    next, Then click finish.
-                </li>
+                <h3>Project IPL</h3>
+                <ul>
+                    <li>
+                        <b>Step - 1:</b>
+                        Go to Kaggle download a dataset.
+                    </li>
+                    <li>
+                        <b>Step - 2:</b>
+                        Open MySQL Workbench
+                    </li>
+                    <li>
+                        <b>Step - 3:</b>
+                        <code>create database ipl;</code>
+                    </li>
+                    <li>
+                        <b>Step - 4:</b>
+                        Right click to ipl database click "Table data import Wizard" then select the Excel file and
+                        click
+                        next, Then click finish.
+                    </li>
 
-                <p><b>Q: </b>WAQ to print total number of matches happened season wise?</p>
-                <span>Ans:</span>
-                <code>select season, count(*) as no_of_matches
+                    <p><b>Q: </b>WAQ to print total number of matches happened season wise?</p>
+                    <span>Ans:</span>
+                    <code>select season, count(*) as no_of_matches
                     from matches
                     group by season;</code>
 
-                <p><b>Q: </b>WAQ to print total number of matches won by each team season wise?</p>
-                <span>Ans: </span>
-                <code>select season, winner, count(*) as no_of_matches
+                    <p><b>Q: </b>WAQ to print total number of matches won by each team season wise?</p>
+                    <span>Ans: </span>
+                    <code>select season, winner, count(*) as no_of_matches
                     from matches
                     group by winner, season;</code>
 
-                <p><b>Q: </b>WAQ to find total matches won by each team?</p>
-                <span>Ans: </span>
-                <code>select winner, count(*) as total_winnings
+                    <p><b>Q: </b>WAQ to find total matches won by each team?</p>
+                    <span>Ans: </span>
+                    <code>select winner, count(*) as total_winnings
                     from matches
                     group by winner 
                     order by total_winnings desc;</code>
 
-                <p><b>Q: </b>WAQ to print number of winnings each team got pitch wise?</p>
-                <span>Ans: </span>
-                <code>select venue, winner, count(*) as no_of_matches
+                    <p><b>Q: </b>WAQ to print number of winnings each team got pitch wise?</p>
+                    <span>Ans: </span>
+                    <code>select venue, winner, count(*) as no_of_matches
                     from matches
                     group by winner, venue
                     order by no_of_matches desc;</code>
-                <p><b>Q: </b>WAQ to print top 5 teams in terms of winning?</p>
-                <span>Ans: </span>
-                <code> select winner, count(*) as top_winner
+                    <p><b>Q: </b>WAQ to print top 5 teams in terms of winning?</p>
+                    <span>Ans: </span>
+                    <code> select winner, count(*) as top_winner
                     from matches 
                     group by winner
                     order by top_winner desc;
                 </code>
 
-                <li>
-                    <b>Step - 5: </b>
-                    Search Power bi desktop download, and download it.
-                </li>
+                    <li>
+                        <b>Step - 5: </b>
+                        Search Power bi desktop download, and download it.
+                    </li>
 
-                <li>
-                    <b>Step - 6: </b>
-                    Open Power Bi desktop app, create blank template.
-                </li>
+                    <li>
+                        <b>Step - 6: </b>
+                        Open Power Bi desktop app, create blank template.
+                    </li>
 
-                <li>
-                    <b>Step - 7: </b>
-                    Click Import data from Excel/Get data - Excel Workbook. Select files. Then Click Load.
-                </li>
+                    <li>
+                        <b>Step - 7: </b>
+                        Click Import data from Excel/Get data - Excel Workbook. Select files. Then Click Load.
+                    </li>
 
-                <li>
-                    <b>Step - 8: </b>
-                    Then in right side select the files and select one chart, Then don't save or signup Just go to file and export as pdf.
-                </li>
-            </ul>
+                    <li>
+                        <b>Step - 8: </b>
+                        Then in right side select the files and select one chart, Then don't save or signup Just go to
+                        file and export as pdf.
+                    </li>
+                </ul>
+            </div>
 
+            <h3 class="center" id="mongodb">MongoDB</h3>
+            <div class="mongodb">
 
+            </div>
         </div>
     </div>
 
-    <div class="backToTop"><a href="#top">↑</a></div>
+    <a href="#top"><div class="backToTop">↑</div></a>
 </body>
 
 </html>
