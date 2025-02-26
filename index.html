@@ -807,7 +807,8 @@
                 <ul>
                     <li>It was first released in 2009 by comany name 10Gen.</li>
                     <li>MongoDB name comes from word "Homongous" means ability to hold large data.</li>
-                    <li>It is a document oriented database that stores JSON like documents called BSON(Binary JSON).</li>
+                    <li>It is a document oriented database that stores JSON like documents called BSON(Binary JSON).
+                    </li>
                     <li>Heavily used for handling higher amount of data.</li>
                 </ul>
 
@@ -823,7 +824,8 @@
                     </li>
                     <li>
                         <b>Step -3: </b>
-                        Search "MongoDB compass" download and install(GUI tool) or Select during MongoDB install there install compass.
+                        Search "MongoDB compass" download and install(GUI tool) or Select during MongoDB install there
+                        install compass.
                     </li>
                     <li>
                         <b>Step -4: </b>
@@ -836,6 +838,62 @@
                     <li>In MongoDB, whole database is also called schema.</li>
                     <li>Documents replaces records of tables. Feilds in the documents are similar to columns.</li>
                     <li>Collections are similar to tables.</li>
+                </ul>
+
+                <h3>How to create Database in MongoDB</h3>
+                <p>We can create database in MongoDB in two ways. MongoDB databases cann't be created empty, so we need
+                    to create a collection inside the MongoDB to connect database.</p>
+                <ul>
+                    <li>Open MongoDB compass, make a connection (default -- localhost: 27017).
+                        <br>You can see list of databases, we can create one using "+" symbol on top.
+                    </li>
+                    <li>Beside "+", we can see ">_" MongoDB shell ope it and write.
+                        <br><code>&gt; use office 
+                            <br>&lt; switched to db office
+                            <br> &gt; db.createCollection('employees')
+                            <br>&lt; { ok : 1}
+                            </code>
+                        <br>Then refresh
+                        <br>
+                        ("<b>use 'database-name</b>': It will uses database, if there is no database with specific name,
+                        it creates and use it.")
+                    </li>
+                    <li>You cann't create database without collection.</li>
+                    <li><b>create a collection: </b>Collection is a group of MongoDB documents it is equivalent to MySQL
+                        tables. A collection exists within a single database. Collections don't enforce a schema.</li>
+                    <span>Syntax: </span>
+                    <code>db.createCollection('collection-name')</code>
+                    <li><b>Drop collection: </b>To drop the collection, we can use(If we delete collection database
+                        automatically deleted)</li>
+                    <span>Syntax: </span>
+                    <code>db.'collection-name'.drop()</code>
+                </ul>
+
+                <h3>Commands</h3>
+                <ul>
+                    <li><b>Show all databases:</b></li>
+                    <code>&gt; show dbs / show databases</code>
+                    <li><b>Show collections:</b></li>
+                    <code>&gt; show collections</code>
+
+                    <li><b>Insert a document: </b>A document is a set of key value pairs. Document have dynamic schema.
+                        Dynamic schema means documents inside the same collection don't need to have same fields and
+                        structure. Single document can hold multiple datatypes.</li>
+                    <ul>
+                        <li>We can create / insert a document into collection in two ways.</li>
+                        <li><b>insertOne: </b>Using this command, we can insert one document into collection</li>
+                        <span>Syntax: </span>
+                        <code>db.'collection-name'.insertOne({key1: value1, key2: value2,.....})</code>
+                        <br>
+                        <span>Example: </span>
+                        <code>&gt; db.students.insertOne({Name: 'Peter', rno: 24})</code>
+                        <li><b>insertMany: </b>Using this command, we can insert multiple documents into collection.</li>
+                        <span>Syntax: </span>
+                        <code>db.'collection-name'.insertMany([{key1: value1, key2: value2,...}, {key1: value1, key2: value2,...},...])</code>
+                        <br><span>Example: </span>
+                        <code>db.actionMovies.insertMany([{title: 'Spider-Man'}, {title: 'Daredevil'}])</code>
+                    </ul>
+
                 </ul>
             </div>
         </div>
