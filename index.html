@@ -789,6 +789,7 @@
                 <ul>
                     <li>MongoDB is a "NoSQL" document based schema less database that allows you to store and manage
                         large amount of semi-structured data.</li>
+                    <li>MongoDB is a open-source NoSQL, document based schema less, BSON database which is used to storage, manage, scale large more efficiently.</li>
                     <li>It is flexible, scalable and easy to use.</li>
                     <li>There are so many NoSQL databases like Cassandra, couchDB, apacheDB etc..</li>
                 </ul>
@@ -887,13 +888,42 @@
                         <br>
                         <span>Example: </span>
                         <code>&gt; db.students.insertOne({Name: 'Peter', rno: 24})</code>
-                        <li><b>insertMany: </b>Using this command, we can insert multiple documents into collection.</li>
+                        <li><b>insertMany: </b>Using this command, we can insert multiple documents into collection.
+                        </li>
                         <span>Syntax: </span>
                         <code>db.'collection-name'.insertMany([{key1: value1, key2: value2,...}, {key1: value1, key2: value2,...},...])</code>
                         <br><span>Example: </span>
                         <code>db.actionMovies.insertMany([{title: 'Spider-Man'}, {title: 'Daredevil'}])</code>
                     </ul>
+                    <li><b>Rename Collection: </b></li>
+                    <span>Syntax: </span>
+                    <code>db."old-collection-name".renameCollection("new-collection-name");</code>
+                    <br><span>Ex: </span>
+                    <code>db.stntd.renameCollection("students");
+                        <br>{ ok: 1}
+                    </code>
 
+                    <li><b>Update: </b>MongoDB provides a way to update in two ways.</li>
+                    <ul>
+                        <li><b>updateOne: </b>It is used to update the document based on a condition. This method can update only one value.</li>
+                        <span>Syntax: </span>
+                        <code>db."collection-name".updateOne(conditionObject, updationObject);</code><br>
+                        <span>Ex: </span>
+                        <code>db.students.updateOne(
+                            { Name: "Peter" }, 
+                            { $set: { age: 26 } }
+                          );
+                          </code>
+                        <li><b>updateMany: </b>In case multiple elements need to updated. We can use updateMany. It is used to update multiple documents at a time.</li>
+                        <span>Syntax: </span>
+                        <code>db."collection-name".updateMany(conditionObject, updationObject);</code><br>
+                        <span>Ex: </span>
+                        <code>db.students.updateMany(
+                            { Name: "Peter" }, 
+                            { $set: { age: 26 } }
+                          );
+                          </code>
+                    </ul>
                 </ul>
             </div>
         </div>
