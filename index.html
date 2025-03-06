@@ -903,7 +903,7 @@
                         <br>{ ok: 1}
                     </code>
 
-                    <li><b>Update: </b>MongoDB provides a way to update in two ways.</li>
+                    <li><b>Update: </b>It will be update the value if there is no value present then it will add that value. MongoDB provides a way to update in two ways.</li>
                     <ul>
                         <li><b>updateOne: </b>It is used to update the document based on a condition. This method can update only one value.</li>
                         <span>Syntax: </span>
@@ -930,15 +930,23 @@
                         <li><b>deleteOne: </b>It is used to delete only one document which matches specific criteria.</li>
                         <span>Syntax: </span>
                         <code>db."collection-name".deleteOne("conditionObject");</code>
+                        <br><span>Ex: </span>
+                        <code>db.actionMovies.deleteOne({title: "Avangers Endgame"});</code>
                         <li><b>deleteMany: </b>It is used to delete all the documents which matched specific criteria.</li>
                         <span>Syntax: </span>
                         <code>db."collection-name".deleteMany("conditionObject");</code>
+                        <br><span>Ex: </span>
+                        <code>db.actionMovies.deleteMany({year: 2019});</code>
                     </ul>
 
                     <li><b>Find: </b>Find is used to read/display the documents that matched specific criteria, we can do it in two ways.</li>
                     <ul>
                         <li><b>findOne: </b>It is used to read only one document that matched given criteria.</li>
-                        <li><b>find: </b></li>
+                        <span>Syntax: </span>
+                        <code>db."collection-name".findOne("filteredObject");</code>
+                        <li><b>find: </b>It is used to read all the documents that matched given criteria.</li>
+                        <span>Syntax: </span>
+                        <code>db."collection-name".find("filteredObject");</code>
                     </ul>
                 </ul>
             </div>
