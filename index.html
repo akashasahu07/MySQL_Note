@@ -983,6 +983,78 @@
                     </ul>
 
                     <li><b>Logical Operator: </b>These operators are used to combine multiple conditions.</li>
+                    <ul>
+                        <li><b>$and: </b>Matches documents that satisfy all the conditions.</li>
+                        <p><b>Q: </b>WQA to find whose age is greater than 20 and less than 30?
+                        <br><span>Ans: </span>
+                        <code>db.students.find({$and: [{age: {$gt: 20}}, {age: {$lt: 30}}]});</code>
+                        </p>
+                        <li><b>$or: </b>Matches documents that satisfy any one of the condition.</li>
+                        <span>Ex: </span>
+                        <code>db.students.find({$or: [{age: {$gt: 20}}, {age: {$lt: 30}}]});</code>
+                        <li><b>$not: </b>Inverts the effects of query expression.</li>
+                        <span>Ex: </span>
+                        <code>db.students.find({age: { $not: { $gt: 20, $lt: 30 } }});</code>
+                        <li><b>$nor: </b>Matches the documents that are failed in all conditions.</li>
+                        <span>Ex: </span>
+                        <code>db.students.find({$nor: [{age: {$gt: 20}}, {age: {$lt: 30}}]});</code>
+                    </ul>
+
+                    <li><b>Element Operator: </b>Used to check weather a field is exist or not.</li>
+                    <span>Syntax: </span>
+                    <code>db."collection-name".find({"field-name": {$exists: true}});</code>
+                    <br><span>Ex: </span>
+                    <code>db.students.find({age: {$exists: true}});</code>
+
+                    <li><b>Assignment Operator: </b>These operations are used to update the fields based on a condition.</li>
+                    <ul>
+                        <li><b>$set: </b>Set is used to update a field with a specified value.</li>
+                        <span>Ex: </span>
+                        <code>db.students.updateOne({Name: "Vaani"}, {$set: {msg: "I Love You"}});</code>
+                        <li><b>$unset: </b>It is used to remove a certain field from a document.</li>
+                        <span>Ex: </span>
+                        <code>db.students.updateOne({Name: "Vaani"}, {$unset: {msg: "I Love You"}});</code>
+                        <li><b>$inc: </b>Increment a numerical value.</li>
+                        <span>Ex: </span>
+                        <code>db.students.updateOne({Name: "Vaani"}, {$inc: {age: 1}});
+                        <br>db.students.updateOne({Name: "Vaani"}, {$inc: {age: -1}});
+                        </code>
+                        <li><b>$mul: </b>Multiplies a numerical value.</li>
+                        <span>Ex: </span>
+                        <code>db.students.updateOne({Name: "Vaani"}, {$mul: {age: 2}});</code>
+                        <li><b>$rename: </b>Renames a field.</li>
+                        <span>Ex: </span>
+                        <code>db.students.updateOne({Name: "Vaani"}, {$rename: {Name: "Baby"}});</code>
+                    </ul>
+
+                    <li>We can use some default functions such as:</li>
+                    <ul>
+                        <li><b>sort(): </b>It is used to sort the results of a query in ascending or descending order. <b>"1"</b> is for ascending and <b>"-1"</b> is for descending.</li>
+                        <span>Ex: </span>
+                        <code>db.students.find().sort({age: 1}); #Ascending order
+                        <br>db.students.find().sort({age: -1}); #Descending order
+                        </code>
+                        <li><b>Find with Projection: </b>We can set second argument for find to select only which fields to display in query result.</li>
+                        <span>Ex: </span>
+                        <code>db.students.find({}, {age: 1, _id: 0}).sort({age: 1}); #Only age will come nothing else</code>
+                        <li><b>count(): </b>it is used to count the total documents result in the query.</li>
+                        <span>Syntax: </span>
+                        <code>"query".count();</code><br>
+                        <span>Ex: </span>
+                        <code>db.students.find({}, {age: 1, _id: 0}).sort({age: 1}).count();</code>
+
+                        <li><b>limit(): </b>it is used to limit the result to certain documents.</li>
+                        <span>Syntax: </span>
+                        <code>"query".limit(value);</code>
+                        <br><span>Ex: </span>
+                        <code>db.students.find({}, {age: 1, _id: 0}).sort({age: 1}).limit(3);</code>
+
+                        <li><b>skip(): </b>it is used to skip the certain documents.</li>
+                        <span>Syntax: </span>
+                        <code>"query".skip(value);</code>
+                        <br><span>Ex: </span>
+                        <code>db.students.find({}, {age: 1, _id: 0}).sort({age: 1}).limit(3).skip(1); #The first one is skipped</code>
+                    </ul>
                 </ul>
             </div>
         </div>
