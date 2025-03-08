@@ -789,7 +789,8 @@
                 <ul>
                     <li>MongoDB is a "NoSQL" document based schema less database that allows you to store and manage
                         large amount of semi-structured data.</li>
-                    <li>MongoDB is a open-source NoSQL, document based schema less, BSON database which is used to storage, manage, scale large more efficiently.</li>
+                    <li>MongoDB is a open-source NoSQL, document based schema less, BSON database which is used to
+                        storage, manage, scale large more efficiently.</li>
                     <li>It is flexible, scalable and easy to use.</li>
                     <li>There are so many NoSQL databases like Cassandra, couchDB, apacheDB etc..</li>
                 </ul>
@@ -903,9 +904,11 @@
                         <br>{ ok: 1}
                     </code>
 
-                    <li><b>Update: </b>It will be update the value if there is no value present then it will add that value. MongoDB provides a way to update in two ways.</li>
+                    <li><b>Update: </b>It will be update the value if there is no value present then it will add that
+                        value. MongoDB provides a way to update in two ways.</li>
                     <ul>
-                        <li><b>updateOne: </b>It is used to update the document based on a condition. This method can update only one value.</li>
+                        <li><b>updateOne: </b>It is used to update the document based on a condition. This method can
+                            update only one value.</li>
                         <span>Syntax: </span>
                         <code>db."collection-name".updateOne(conditionObject, updationObject);</code><br>
                         <span>Ex: </span>
@@ -914,7 +917,8 @@
                             { $set: { age: 26 } }
                           );
                           </code>
-                        <li><b>updateMany: </b>In case multiple elements need to updated. We can use updateMany. It is used to update multiple documents at a time.</li>
+                        <li><b>updateMany: </b>In case multiple elements need to updated. We can use updateMany. It is
+                            used to update multiple documents at a time.</li>
                         <span>Syntax: </span>
                         <code>db."collection-name".updateMany(conditionObject, updationObject);</code><br>
                         <span>Ex: </span>
@@ -925,21 +929,25 @@
                           </code>
                     </ul>
 
-                    <li><b>Delete: </b>Delete command is used to delete a specific conditioned document/documents. We have two ways to do that.</li>
+                    <li><b>Delete: </b>Delete command is used to delete a specific conditioned document/documents. We
+                        have two ways to do that.</li>
                     <ul>
-                        <li><b>deleteOne: </b>It is used to delete only one document which matches specific criteria.</li>
+                        <li><b>deleteOne: </b>It is used to delete only one document which matches specific criteria.
+                        </li>
                         <span>Syntax: </span>
                         <code>db."collection-name".deleteOne("conditionObject");</code>
                         <br><span>Ex: </span>
                         <code>db.actionMovies.deleteOne({title: "Avangers Endgame"});</code>
-                        <li><b>deleteMany: </b>It is used to delete all the documents which matched specific criteria.</li>
+                        <li><b>deleteMany: </b>It is used to delete all the documents which matched specific criteria.
+                        </li>
                         <span>Syntax: </span>
                         <code>db."collection-name".deleteMany("conditionObject");</code>
                         <br><span>Ex: </span>
                         <code>db.actionMovies.deleteMany({year: 2019});</code>
                     </ul>
 
-                    <li><b>Find: </b>Find is used to read/display the documents that matched specific criteria, we can do it in two ways.</li>
+                    <li><b>Find: </b>Find is used to read/display the documents that matched specific criteria, we can
+                        do it in two ways.</li>
                     <ul>
                         <li><b>findOne: </b>It is used to read only one document that matched given criteria.</li>
                         <span>Syntax: </span>
@@ -948,6 +956,33 @@
                         <span>Syntax: </span>
                         <code>db."collection-name".find("filteredObject");</code>
                     </ul>
+                </ul>
+
+                <h3>Operators</h3>
+                <ul>
+                    <li>operators are used to filter the data using some conditions.</li>
+                    <li>In MongoDB, operators are preceeded by <span>"$"</span>.</li><br>
+                    <li><b>Comparison Operators: </b>These operators are used to compare values in queries.</li>
+                    <ul>
+                        <li><b>$eq: </b>Matches values that a equal to a specific value.</li>
+                        <span>Ex: </span>
+                        <code>db.actionMovies.find({title: {$eq: "Titanic"}});</code>
+                        <li><b>$gt: </b>Matches values that are greater than a specific value.</li>
+                        <span>Ex:</span>
+                        <code>db.actionMovies.find({year: {$gt: 2005}});</code>
+                        <li><b>$lt: </b>Matched values that are less than a specific value.</li>
+                        <span>Ex: </span>
+                        <code>db.actionMovies.find({year: {$lt: 2005}});</code>
+                        <li>Similarly we can also perform <b>gte, lte, ne</b>.</li>
+                        <li><b>$in: </b>Matches values that exists in an array of specified values.</li>
+                        <span>Ex: </span>
+                        <code>db.actionMovies.find({title: {$in: ["Titanic", "Interstellar"]}});</code>
+                        <li><b>$nin: </b>Matches values that are not exists in an array of specified values.</li>
+                        <span>Ex: </span>
+                        <code>db.actionMovies.find({title: {$nin: ["Titanic", "Interstellar"]}});</code>
+                    </ul>
+
+                    <li><b>Logical Operator: </b>These operators are used to combine multiple conditions.</li>
                 </ul>
             </div>
         </div>
