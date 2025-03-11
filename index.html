@@ -1217,6 +1217,54 @@
                         </code>
                     </ul>
                 </div>
+
+                <div class="replication">
+                    <h3>Replication</h3>
+                    <p><b>Why we need Replication?</b></p>
+                    <ul>
+                        <li>It will keep the data safe.</li>
+                        <li>High availability of data.</li>
+                        <li>Disaster recovery.</li>
+                        <li>No downtime for maintainence.</li>
+                    </ul>
+
+                    <p><b>What is Replication?</b></p>
+                    <ul>
+                        <li>It is process of synchronizing the data into multiple servers.</li>
+                        <li>Replication provides redundancy and increases data availability.</li>
+                        <li>It distributes multiple copies to multiple servers without any difference.</li>
+                        <li>Each seb-server is called <b>replica set</b>.</li>
+                        <li>It also provides security from a single server loss of data problem.</li>
+                    </ul>
+
+                    <p><b>How it Works?</b></p>
+                    <ul>
+                        <li><b>Replica sets</b> is a group of two or more devices called nodes.</li>
+                        <li>In every replica set, there is one master node/primary server and others are secondary.</li>
+                        <li>Data always flow from primary to secondary.</li>
+                        <li>In case of loss of primary node, In the remaining nodes one will be elected as primary node.</li>
+                        <li>In case of maintainence, secondary will become primary and after the maintainence again it will become secondary.</li>
+                        <img src="https://orangematter.solarwinds.com/wp-content/uploads/2020/03/Replica-Screenshot.png" alt="replication" width="400">
+                        <li>To add replica set, you can use <code>rs.add('host-name': 'port-no')</code></li>
+                    </ul>
+                </div>
+
+                <div class="sharding">
+                    <h3>Sharding</h3>
+                    <ul>
+                        <li>It is the process of storing data records across multiple servers.</li>
+                        <li>It is MongoDB approach to meet the demands of data growth.</li>
+                        <li>As the size of single server increases it devides and store the data as smaller parts in remaining servers.</li>
+                    </ul>
+
+                    <p><b>Why Sharding?</b></p>
+                    <ul>
+                        <li>Sharding allows the scaling of application.</li>
+                        <li>It provides fast retrival due to smaller size.</li>
+                        <li>It is cost effective.</li>
+                        <img src="https://www.tutorialspoint.com/mongodb/images/sharding.png" alt="sharding" width="450">
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
