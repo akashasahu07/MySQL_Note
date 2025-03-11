@@ -1067,32 +1067,33 @@
                             <br><span>Ans: </span>
                             <code>db.products.find({category: "electronics"});</code>
                         </p>
-    
+
                         <p>
                             <b>Q: </b>Print all the jewellery products only with their title and price?
                             <br><span>Ans: </span>
                             <code>db.products.find({category: "jewelery"}, {title: 1, price: 1, _id: 0});</code>
                         </p>
-    
+
                         <p>
-                            <b>Q: </b>Add a field "offerPrice" to all documents and update it's price as 10% discount from original price?
+                            <b>Q: </b>Add a field "offerPrice" to all documents and update it's price as 10% discount
+                            from original price?
                             <br><span>Ans: </span>
                             <code>db.products.updateMany({}, [{$set: {offerPrice: {$multiply: ["$price", 0.9]}}}]);</code>
                         </p>
-    
+
                         <p>
                             <b>Q: </b>Remove description field from men's clothing category items?
                             <br><span>Ans: </span>
                             <code>db.products.updateMany({category: "men's clothing"}, {$unset: {description: true}});
                             </code>
                         </p>
-    
+
                         <p>
                             <b>Q: </b>Print all documents whose price is between 100 to 500 in descending order?
                             <br><span>Ans: </span>
                             <code>db.products.find({$and: [{price: {$gt: 100}}, {price: {$lt: 500}}]}).sort({price: -1});</code>
                         </p>
-    
+
                         <p>
                             <b>Q: </b>Find the total number of women's clothing products are available?
                             <br><span>Ans: </span>
@@ -1105,9 +1106,12 @@
                     <h3>Aggregation Framework</h3>
                     <ul>
                         <li>It is used to perform or process the data and transform the data in a flexible way.</li>
-                        <li>Its like a pipeline that takes in data, performs various operations and outputs the transformed data.</li>
-                        <li>An aggregation pipeline consists of multiple stages, each of which performs a specific operation on the data.</li>
-                        <li>The stages are executed in a sequence such that output of one stage will pass to the input of next stage.</li>
+                        <li>Its like a pipeline that takes in data, performs various operations and outputs the
+                            transformed data.</li>
+                        <li>An aggregation pipeline consists of multiple stages, each of which performs a specific
+                            operation on the data.</li>
+                        <li>The stages are executed in a sequence such that output of one stage will pass to the input
+                            of next stage.</li>
                         <span>Syntax: </span>
                         <code>db."collection-name".aggregate([{"stage-1"}, {"stage-2"},....]);</code>
                         <li>Most popular stages:</li>
@@ -1115,11 +1119,15 @@
                             <li><b>$match: </b>Filters the data according to a condition</li>
                             <span>Ex: </span>
                             <code>db.products.aggregate({$match: {category: "jewelery"}});</code>
-                            <li><b>$project: </b>It is used to select only sertain fields to appear in the results. "_id" is default to appear. <b>"1" </b>is true which makes field appear and <b>"0" </b>is false which makes the field disappear.</li>
-                            <li><b>$sort: </b>Sorts the data in ascending or descending order of a certain field <b>"1" </b>is for ascending <b>"-1" </b>is for descending.</li>
+                            <li><b>$project: </b>It is used to select only sertain fields to appear in the results.
+                                "_id" is default to appear. <b>"1" </b>is true which makes field appear and <b>"0"
+                                </b>is false which makes the field disappear.</li>
+                            <li><b>$sort: </b>Sorts the data in ascending or descending order of a certain field <b>"1"
+                                </b>is for ascending <b>"-1" </b>is for descending.</li>
                             <span>Ex: </span>
                             <code>db.products.aggregate({$match: {category: "jewelery"}}, {$project: {title: 1, _id: 0}}, {$sort: {title: -1}});</code>
-                            <li><b>$group: </b>It groups the data by a specific field and performs aggregation operations on each group.</li>
+                            <li><b>$group: </b>It groups the data by a specific field and performs aggregation
+                                operations on each group.</li>
 
                             <p>
                                 <b>Q: </b>Use aggregate pipe "$group" and print number of items on each category?
@@ -1129,11 +1137,84 @@
                                 <code>db.products.aggregate({$group: {_id: "$category", count: {$count: {}}}}, {$sort: {count: 1}});</code>
                             </p>
 
-                            <li>We can use aggregate functions such as <b>"$count", "$sum", "$max", "$min", "$avg" </b>in <b>"$group" </b>stage.</li>
+                            <li>We can use aggregate functions such as <b>"$count", "$sum", "$max", "$min", "$avg"
+                                </b>in <b>"$group" </b>stage.</li>
 
-                            <li><b>$unwind: </b>unwind is used to split the array of documents into individual documents.</li>
-                            <p><span>Ex: </span>We have list of customers and each customer have list of orders they did as a array. To split each order from array so that we can group again and find the sum, we will use "$unwind".</p>
+                            <li><b>$unwind: </b>unwind is used to split the array of documents into individual
+                                documents.</li>
+                            <p><span>Ex: </span>We have list of customers and each customer have list of orders they did
+                                as a array. To split each order from array so that we can group again and find the sum,
+                                we will use "$unwind".</p>
                         </ul>
+
+                        <p><b>Q: </b>Print the total products whose price is between 200 and 500 and group then
+                            according to their category and sort them as per ascending order of noOfProducts?
+                            <br><span>Ans: </span>
+                            <code>db.products.aggregate([
+                        <br>{$match: {$and: [{price: {$gt: 100}}, {price: {$lt: 500}}]}},
+                        <br>{$group: {_id: "$category", noOfProducts: {$count: {}}}},
+                        <br>{$sort: {noOfProducts: 1}}
+                            ]);</code>
+                        </p>
+
+                        <li><b>$lookup: </b>Look up is used to perform the left outer join with another collection.</li>
+                        <span>Syntax: </span>
+                        <code>db."collection-name".aggregate([
+                            <br>{$lookup: {
+                            <br>form: "foreign-collection",
+                            <br>localField: "field name in my current collection",
+                            <br>foreignField: "field name in foreign collection",
+                            <br>as: "new field name"
+                            <br> }}]);</code>
+                        <br><span>Ex: </span>
+                        <code>
+                            db.products.aggregate([
+                            <br>{$lookup: {
+                            <br>from: "orders",
+                            <br>localField: "id",
+                            <br>foreignField: "id",
+                            <br>as: "orders"
+                            <br> }} ]);
+                        </code>
+
+                        <li><b>$out: </b>out is used to store the output of previous stage as a new collection.</li>
+                        <span>Syntax: </span>
+                        <code>$out: {
+                            <br>db: "database-name",
+                            <br>coll: "collection-name"
+                        }
+                        <br>> or you can directly mention collection-name as 
+                        <br>{
+                            $out: "collection-name"
+                        }
+                        </code>
+
+                        <p><b>Q: </b>print all products as group wise with their total sum of price, average price,
+                            total count and store the result as a new collection?</p>
+                        <span>Ex: </span>
+                        <code>
+                            db.products.aggregate([
+                            <br>{$group: {_id: "$category", 
+                            <br>totalCount: {$count: {}}, 
+                            <br>totalSum: {$sum: "$price"},
+                            <br>totalAvg: {$avg: "$price"}
+                            <br> }},
+                            <br>{$out: "totalValue"}
+                            <br> ]);
+                        </code>
+
+                        <li><b>addFields: </b>"$addFields" is used to add new fields to the documents</li>
+                        <span>Syntax : </span>
+                        <code>$addFileds: {
+                            <br> "field-name": query
+                            <br> }</code>
+                        <br><span>Ex: </span>
+                        <code>
+                            db.products.aggregate([
+                            <br>{$addFields: 
+                            <br>{newPrice: {$multiply: ["$price", 0.8]}}}
+                            <br> ]);
+                        </code>
                     </ul>
                 </div>
             </div>
