@@ -1242,9 +1242,12 @@
                         <li><b>Replica sets</b> is a group of two or more devices called nodes.</li>
                         <li>In every replica set, there is one master node/primary server and others are secondary.</li>
                         <li>Data always flow from primary to secondary.</li>
-                        <li>In case of loss of primary node, In the remaining nodes one will be elected as primary node.</li>
-                        <li>In case of maintainence, secondary will become primary and after the maintainence again it will become secondary.</li>
-                        <img src="https://orangematter.solarwinds.com/wp-content/uploads/2020/03/Replica-Screenshot.png" alt="replication" width="400">
+                        <li>In case of loss of primary node, In the remaining nodes one will be elected as primary node.
+                        </li>
+                        <li>In case of maintainence, secondary will become primary and after the maintainence again it
+                            will become secondary.</li>
+                        <img src="https://orangematter.solarwinds.com/wp-content/uploads/2020/03/Replica-Screenshot.png"
+                            alt="replication" width="400">
                         <li>To add replica set, you can use <code>rs.add('host-name': 'port-no')</code></li>
                     </ul>
                 </div>
@@ -1254,7 +1257,8 @@
                     <ul>
                         <li>It is the process of storing data records across multiple servers.</li>
                         <li>It is MongoDB approach to meet the demands of data growth.</li>
-                        <li>As the size of single server increases it devides and store the data as smaller parts in remaining servers.</li>
+                        <li>As the size of single server increases it devides and store the data as smaller parts in
+                            remaining servers.</li>
                     </ul>
 
                     <p><b>Why Sharding?</b></p>
@@ -1262,8 +1266,54 @@
                         <li>Sharding allows the scaling of application.</li>
                         <li>It provides fast retrival due to smaller size.</li>
                         <li>It is cost effective.</li>
-                        <img src="https://www.tutorialspoint.com/mongodb/images/sharding.png" alt="sharding" width="450">
+                        <img src="https://www.tutorialspoint.com/mongodb/images/sharding.png" alt="sharding"
+                            width="450">
+                        <li>Each small server to store data is called shard.</li>
+                        <li>In production environment each shard have separete replica set.</li>
                     </ul>
+                </div>
+
+                <div class="backup">
+                    <h3>Backup</h3>
+                    <ul>
+                        <li>To create MongoDB backup, use command <code>"mongodump"</code>.</li>
+                        <li>This command will dump the entire database of your server into dump folder.</li>
+                        <li>To restore this dump, use command <code>"mongorestore"</code>.</li>
+                        <li><code>"mongodump"</code> is done by MongoDB CLI tools, we need to install them separately.
+                        </li>
+                        <code>
+                            🔸Step-1: Download and install "MongoDB Command Line"
+                            <br>🔸Step-2: Open CMD as Administrator
+                            <br>🔸Step-3: Go to "C drive" "Program files" from "MongoDB" folder there is one "tools" folder there "bin" folder. Copy the path from the top.
+                            <br>🔸Step-4: Paste in CMD then hit enter
+                            <br>🔸Step-5: Write command "mongodump" hit enter
+                            <br>🔸Step-6: Write command "mongorestore" hit enter (to restore deleted data)
+                            <br>🔸It will dump all the MongoDB data If you delete collection from the MongoDB compass after refresh the data cames back.
+                        </code>
+                    </ul>
+
+                    <div class="indexes">
+                        <h3>Indexes</h3>
+                        <ul>
+                            <li>MongoDB queries can become more efficient and faster by adding indexes to certain
+                                fields.</li>
+                            <li>Indexes makes the queries retrive data fasterby targeting exact query field.</li>
+                            <span>Syntax: </span>
+                            <code>db."collection-name".createIndex({"field-name: 1(asc) or -1(dsc)"});</code>
+                            <li>Every collection by default have index for "_id" primary index.</li>
+                            <li>We can delete indexes by </li>
+                            <span>Syntax: </span>
+                            <code>db."collection-name".dropIndex();</code>
+                        </ul>
+                    </div>
+
+                    <div class="atlas">
+                        <h3>MongoDB Atlas</h3>
+                        <ul>
+                            <li>MongoDB atlas is a cloud database provider which provides security, backup, real time
+                                monitoring and many more features.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
