@@ -105,3 +105,14 @@ td {
 .btn button:hover {
     background-color: #c4f7a1;
 }
+
+.cheat-sheet {
+    display: flex;
+    justify-content: center;
+}
+
+embed {
+    width: 70vw;
+    height: 500px;
+    border-radius: 5px;
+}
