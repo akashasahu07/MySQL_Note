@@ -784,16 +784,232 @@
 
                 <div class="interview-question">
                     <h3>MySQL Interview Questions & Answer</h3>
-                    <ul>
+                    <ol>
                         <li><b>What is MySQL?</b></li>
                         <span>Ans: </span>
+                        <code>
+                            MySQL is an open-source relational database management system (RDBMS) that stores and
+                            manages data using SQL (Structured Query Language). It is widely used for web applications
+                            and supports features like scalability, security, and high performance.
+                        </code>
+
                         <li><b>What are the advantages of using MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>
+                            The advantages of using MySQL include:
+                            Open-source & free, High performance, Scalability, Security, Cross-platform support,  Replication & clustering, Integration 
+                            </code>
+
                         <li><b>Explain the difference between MySQL and SQL.?</b></li>
+                        <span>Ans: </span>
+                        <code>
+                            SQL (Structured Query Language): A standard language used to manage and manipulate relational databases. It is not a database itself but a query language. <br>
+                            MySQL: A relational database management system (RDBMS) that uses SQL to store, retrieve, and manage data. It is a software that implements SQL to interact with databases.
+                            <br>Key Difference:
+                            SQL is a language, while MySQL is an RDBMS that uses SQL to operate on databases.
+                        </code>
+
                         <li><b>What is a database?</b></li>
+                        <span>Ans: </span>
+                        <code>
+                            A database is an organized collection of data that allows easy storage, retrieval, and management. It helps in efficiently handling large amounts of structured information. Examples include MySQL, PostgreSQL, and MongoDB.
+                        </code>
+
                         <li><b>What is a table in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>
+                            A table in MySQL is a structured collection of rows and columns used to store data in a relational database. Each column represents a specific attribute (field), and each row represents a record (entry).
+                        </code>
+
                         <li><b>What are the different types of tables in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>
+                            MySQL supports different types of storage engines for tables, including:
+
+                            <br>🔸InnoDB – Default storage engine, supports transactions, foreign keys, and crash recovery.
+                            <br>🔸MyISAM – Fast read operations, no support for transactions or foreign keys.
+                            <br>🔸Memory (HEAP) – Stores data in RAM for quick access, but data is lost on restart.
+                            <br>🔸CSV – Stores data in plain text CSV format, useful for data exchange.
+                            <br>🔸ARCHIVE – Optimized for storing large amounts of historical data with high compression.
+                            <br>🔸MERGE (MRG_MYISAM) – Combines multiple MyISAM tables into a single table.
+                            <br>🔸FEDERATED – Connects to external MySQL databases without storing data locally.
+                        </code>
+
+                        <li><b>Explain the difference between CHAR and VARCHAR.?</b></li>
+                        <span>Ans: </span>
+                        <code>
+                            🔸CHAR is a fixed-length data type, meaning it always uses the defined space, even if the stored value is shorter. It is faster for fixed-size data.
+
+                            <br>🔸VARCHAR is a variable-length data type that only uses the space needed for the actual data, plus extra bytes for length storage. It is more efficient for storing varying-length text.
+                        </code>
+
+                        <li><b>What is a primary key?</b></li>
+                        <span>Ans: </span>
+                        <code>A primary key is a unique identifier for each record in a table. It ensures that no duplicate or NULL values exist in the specified column(s).</code>
+
+                        <li><b>What is a foreign key?</b></li>
+                        <span>Ans: </span>
+                        <code>A foreign key is a column in one table that establishes a relationship with the primary key of another table. It enforces referential integrity by ensuring valid relationships between records.</code>
+
+                        <li><b>What is an index in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>An index in MySQL is a data structure that improves the speed of data retrieval operations on a table. It helps in faster searching but may slow down insert, update, and delete operations due to additional maintenance.</code>
+
+                        <li><b>Explain the different types of indexes in MySQL.?</b></li>
+                        <span>Ans: </span>
+                        <code>🔸Primary Index – Automatically created for the primary key, ensures unique and fast lookups.
+                            <br>🔸Unique Index – Prevents duplicate values in a column, ensuring uniqueness.
+                            <br>🔸Full-Text Index – Used for text-based searches in large data sets.
+                            <br>🔸Composite Index – Created on multiple columns to optimize queries using those columns together.
+                            <br>🔸Spatial Index – Used for geographic data in spatial databases.
+                            <br>🔸Clustered Index – Organizes table rows based on the primary key, improving retrieval speed.</code>
+
+                        <li><b>What is a unique key?</b></li>
+                        <span>Ans:</span>
+                        <code>A unique key is a constraint that ensures all values in a column (or combination of columns) are unique across the table. Unlike a primary key, it allows NULL values but prevents duplicates.</code>
+
+                        <li><b>What is the default port for MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>The default port for MySQL is 3306.</code>
+
+                        <li><b>Explain the concept of a MySQL client and server.?</b></li>
+                        <span>Ans: </span>
+                        <code>
+                            MySQL works on a client-server model:
+
+                            <br>🔸The server is where the actual database is stored and managed. It handles requests, processes data, and sends results back.
+
+                            <br>🔸The client is what we use to interact with the server. It can be a command-line tool, a software like MySQL Workbench, or a program using Python, PHP, etc.
+                        </code>
+
+                        <li><b>What is a stored procedure?</b></li>
+                        <span>Ans: </span>
+                        <code>A stored procedure is a set of SQL statements that are saved in the database and can be executed whenever needed. It helps automate tasks, improve performance, and reduce code repetition.</code>
+
+                        <li><b>How do you create a database in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>CREATE DATABASE database_name;
+                        </code>
+
+                        <li><b>How do you create a table in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>CREATE TABLE table_name (
+                            column1 datatype constraints,
+                            column2 datatype constraints,
+                            ...
+                        );
+                        </code>
+
+                        <li><b>How do you insert data into a MySQL table?</b></li>
+                        <span>Ans: </span>
+                        <code>INSERT INTO table_name (column1, column2, column3, ...)
+                            VALUES (value1, value2, value3, ...);
+                        </code>
+
+                        <li><b>How do you update data in a MySQL table?</b></li>
+                        <span>Ans: </span>
+                        <code>UPDATE table_name  
+                            SET column1 = value1, column2 = value2, ...  
+                            WHERE condition;
+                        </code>
+
+                        <li><b>How do you delete data from a MySQL table?</b></li>
+                        <span>Ans: </span>
+                        <code>DELETE FROM table_name WHERE condition;
+                        </code>
+
+                        <li><b>What is the difference between DELETE and TRUNCATE commands?</b></li>
+                        <span>Ans: </span>
+                        <code>🔸DELETE FROM users WHERE age > 30;  -- Deletes specific rows
+                        <br>🔸TRUNCATE TABLE users;  -- Deletes all rows and resets auto-increment
+                        </code>
+
+                        <li><b>Explain the difference between INNER JOIN and OUTER JOIN.?</b></li>
+                        <span>Ans: </span>
+                        <code>🔸INNER JOIN when you only need related data.
+                        <br>🔸OUTER JOIN when you want to keep all records from one table, even if there’s no match in the other.</code>
+
+                        <li><b>What is a LEFT JOIN?</b></li>
+                        <span>Ans: </span>
+                        <code>A LEFT JOIN returns all records from the left table and only matching records from the right table. If there’s no match, it fills the missing values with NULL.</code>
                         
-                    </ul>
+                        <li><b>What is a RIGHT JOIN?</b></li>
+                        <span>Ans: </span>
+                        <code>A RIGHT JOIN returns all records from the right table and only matching records from the left table. If there’s no match, it fills the missing values with NULL.</code>
+
+                        <li><b>What is a FULL JOIN?</b></li>
+                        <span>Ans: </span>
+                        <code>🔸A FULL JOIN (also called FULL OUTER JOIN) returns all records from both tables. If there is a match, it combines the data. If there is no match, it fills the missing values with NULL.
+                        <br>🔸MySQL does not support FULL JOIN directly, but we can achieve it using UNION of LEFT JOIN and RIGHT JOIN.
+                        </code>
+
+                        <li><b>How do you create a stored procedure in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>A stored procedure is a reusable SQL code block that can be executed with a single command.
+                        <br>Ex: DELIMITER //
+
+                        <br>CREATE PROCEDURE procedure_name (parameters)
+                        <br>BEGIN
+                            <br>-- SQL statements
+                        <br>END //
+                        
+                        <br>DELIMITER ;
+                        
+                        </code>
+
+                        <li><b>How do you create a trigger in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>A trigger is a special SQL procedure that automatically executes before or after an event (INSERT, UPDATE, DELETE) on a table.</code>
+
+                        <li><b>What is a view in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>A view in MySQL is a virtual table that is based on the result of a SELECT query. It does not store data but provides a way to simplify complex queries and enhance security by restricting access to certain columns.</code>
+
+                        <li><b>How do you create a view in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>CREATE VIEW view_name AS  
+                            <br>SELECT column1, column2, ...  
+                            <br>FROM table_name  
+                            <br>WHERE condition;
+                        </code>
+
+                        <li><b>How do you optimize a MySQL query?</b></li>
+                        <span>Ans: </span>
+                        <code>To optimize a MySQL query, use indexes on frequently searched columns, avoid SELECT *, and fetch only needed data. Use LIMIT for large datasets and prefer WHERE over HAVING for filtering. Use JOIN instead of subqueries and replace multiple OR with IN. Run EXPLAIN to analyze queries, choose proper data types, and enable query caching for faster results. These steps make queries run quickly and efficiently.</code>
+
+                        <li><b>What is normalization? Explain the different normal forms.?</b></li>
+                        <span>Ans: </span>
+                        <code>Normalization is the process of organizing a database to reduce data redundancy and improve data integrity. It divides large tables into smaller related tables and establishes relationships between them.</code>
+
+                        <li><b>What is denormalization?</b></li>
+                        <span>Ans: </span>
+                        <code>Denormalization is the opposite of normalization. It is the process of combining tables to improve query performance by reducing the need for complex joins. This helps speed up read operations but may cause some data redundancy.</code>
+
+                        <li><b>Explain the ACID properties in the context of a database.?</b></li>
+                        <span>Ans: </span>
+                        <code>ACID ensures reliable transactions in a database. <br><b>Atomicity</b> makes sure a transaction completes fully or not at all. <br><b>Consistency</b> keeps data valid before and after a transaction. <br><b>Isolation</b> prevents transactions from interfering with each other. <br><b>Durability</b> ensures committed data stays safe, even after system crashes. These rules keep databases accurate and secure.</code>
+
+                        <li><b>What are transactions in MySQL?</b></li>
+                        <span>Ans: </span>
+                        <code>A transaction in MySQL is a sequence of operations that are executed as a single unit. It ensures data consistency and integrity using ACID properties (Atomicity, Consistency, Isolation, Durability).</code>
+
+                        <li><b>How do you implement transactions in MySQL?</b></li>
+                        <li><b>What are the different storage engines in MySQL?</b></li>
+                        <li><b>Explain the difference between InnoDB and MyISAM.?</b></li>
+                        <li><b>What are the advantages of using InnoDB over MyISAM?</b></li>
+                        <li><b>What is replication in MySQL?</b></li>
+                        <li><b>How do you set up replication in MySQL?</b></li>
+                        <li><b>What is the difference between master-slave and master-master replication?</b></li>
+                        <li><b>What is a subquery in MySQL?</b></li>
+                        <li><b>How do you handle errors in MySQL stored procedures?</b></li>
+                        <li><b>What are MySQL triggers, and how do you use them?</b></li>
+                        <li><b>Explain the concept of MySQL partitions.?</b></li>
+                        <li><b>How do you backup and restore a MySQL database?</b></li>
+                        <li><b>What is a common table expression (CTE)?</b></li>
+                        <li><b>What are the security features available in MySQL?</b></li>
+                        <li><b>How do you implement full-text search in MySQL?</b></li>
+                        <li><b>Explain how to optimize MySQL database performance.?</b></li>
+                    </ol>
                 </div>
             </div>
 
