@@ -30,6 +30,7 @@ ul {
 
 span {
     color: #ff0000;
+    font-weight: bold;
 }
 
 b {
@@ -71,7 +72,9 @@ a .backToTop {
     background-color: #0056b3;
 }
 
-table, tr, td {
+table,
+tr,
+td {
     border: 1px solid;
     border-collapse: collapse;
 }
@@ -88,18 +91,22 @@ td {
 }
 
 .btn button {
-    padding: 5px 15px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    /* Indigo to Blue */
     border: none;
-    background-color: #f7db78;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 2px 5px #000000;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn button:hover {
-    background-color: #c4f7a1;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .cheat-sheet {
@@ -159,7 +166,8 @@ embed {
     transition: background-color 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
-    justify-content: center; /* center horizontally */
+    justify-content: center;
+    /* center horizontally */
     font-size: 18px;
     outline: none;
 }
